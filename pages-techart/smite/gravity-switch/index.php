@@ -1,5 +1,5 @@
 <?php
-$page_title = "Gravity Switch Rig - Technical Art";
+$page_title = "FK Chain Hair Tool - Technical Art";
 include '../../../includes/header.php';
 ?>
 
@@ -9,44 +9,44 @@ include '../../../includes/header.php';
         <a href="../../../index.php" style="color: var(--header-color); text-decoration: none;">Home</a> >
         <a href="../../../techart.php" style="color: var(--header-color); text-decoration: none;">Technical Art</a> >
         <a href="../index.php" style="color: var(--header-color); text-decoration: none;">Smite</a> >
-        <span>Gravity Switch Rig</span>
+        <span>FK Chain Hair Tool</span>
     </nav>
 
-    <h2>Gravity Switch Rig</h2>
+    <h2>FK Chain Hair Tool</h2>
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
-        <p><strong>Hi-Rez Studios | 3ds Max Rigging & Animation</strong></p>
-        <p>A gravity simulation rigging system developed using orient and aim constraints in 3ds Max. This rig allows animators to dynamically change the direction of gravity affecting a character, enabling smooth transitions between different gravitational orientations for gameplay and cinematics.</p>
+        <p><strong>Hi-Rez Studios | 3ds Max MaxScript Tool Development</strong></p>
+        <p>A MaxScript-based rigging tool developed for 3ds Max that automates the creation of FK (Forward Kinematics) chain hair systems. This tool streamlines the hair rigging workflow by automatically generating bone chains, control objects, and constraint hierarchies based on artist-defined splines or selected objects.</p>
 
-        <p>The Gravity Switch rig was designed to support characters that could walk on walls, ceilings, or in changing gravity environments. By using constraint-based solutions rather than scripted simulations, the system remained artist-friendly and performed efficiently in the animation pipeline.</p>
+        <p>The FK Chain Hair Tool was designed to accelerate the character animation pipeline at Hi-Rez Studios. By automating repetitive setup tasks, the tool reduced hair rig creation time from hours to minutes while maintaining consistency across character assets and ensuring animator-friendly control structures.</p>
     </div>
 
     <h2>Key Features</h2>
     <div class="grid competencies-grid">
         <div class="grid-item">
             <div class="project-info">
-                <h3>Dynamic Gravity Direction</h3>
-                <p class="project-description">Orient constraints allow smooth transitions between different gravity directions, supporting wall-walking and ceiling-walking animations.</p>
+                <h3>Automated Bone Generation</h3>
+                <p class="project-description">Automatically creates FK bone chains from splines or point selections, with customizable bone count and spacing for optimal deformation.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Aim Constraint Integration</h3>
-                <p class="project-description">Aim constraints keep character elements properly oriented relative to the gravity direction, maintaining believable physics.</p>
+                <h3>Control Rig Creation</h3>
+                <p class="project-description">Generates animator-friendly control objects with proper hierarchies, shapes, and colors for easy selection and manipulation.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Animator-Friendly Controls</h3>
-                <p class="project-description">Simple control interface allows animators to switch gravity direction with keyframeable parameters, no scripting knowledge required.</p>
+                <h3>Constraint Setup</h3>
+                <p class="project-description">Automatically configures orientation and position constraints between controls and bones, ensuring proper FK behavior and chain propagation.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Performance Optimized</h3>
-                <p class="project-description">Constraint-based approach ensures real-time viewport performance and clean animation curves without simulation overhead.</p>
+                <h3>Customizable Parameters</h3>
+                <p class="project-description">User-configurable settings for bone count, control size, naming conventions, and constraint types to match project requirements.</p>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@ include '../../../includes/header.php';
     <h2>Tool Demo</h2>
     <div class="demo-reel">
         <div class="video-container">
-            <iframe title="Gravity Switch Rig Demo"
+            <iframe title="FK Chain Hair Tool Demo"
                     src="https://www.youtube.com/embed/OyiUt6jIEQE"
                     frameborder="0"
                     allowfullscreen
@@ -64,35 +64,36 @@ include '../../../includes/header.php';
     </div>
 
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
-    <h2>Rig Impact</h2>
-    <p>Enabled new gameplay mechanics and cinematic possibilities by giving animators precise control over gravity simulation. The constraint-based approach provided predictable, keyframeable results while maintaining real-time performance in the animation workflow.</p>
+    <h2>Tool Impact</h2>
+    <p>Significantly accelerated the character rigging workflow by automating repetitive FK chain creation tasks. The tool enabled riggers to focus on creative aspects rather than tedious manual setup, while ensuring consistency and quality across all character hair rigs in production.</p>
     </div>
 
     <div class="text-content">
         <ul>
-            <li><strong>Gameplay Flexibility:</strong> Supported wall-walking and gravity-defying character abilities</li>
-            <li><strong>Animator Control:</strong> Keyframeable gravity direction gave animators full creative control</li>
-            <li><strong>Real-Time Performance:</strong> Constraint system maintained viewport interactivity during animation</li>
-            <li><strong>Clean Export:</strong> Baked animations exported cleanly to engine without simulation artifacts</li>
+            <li><strong>Time Savings:</strong> Reduced hair rig setup from hours to minutes per character</li>
+            <li><strong>Consistency:</strong> Ensured standardized naming conventions and rig structure across all assets</li>
+            <li><strong>Quality Assurance:</strong> Eliminated human error in manual constraint and hierarchy setup</li>
+            <li><strong>Pipeline Integration:</strong> Seamlessly integrated with existing character rigging pipeline and tools</li>
         </ul>
 
         <hr>
 
         <h3>Technology Stack</h3>
         <ul>
-            <li><strong>3D Software:</strong> 3ds Max</li>
-            <li><strong>Rigging Systems:</strong> Orient Constraints, Aim Constraints</li>
-            <li><strong>Animation Tools:</strong> Custom control rigs, parameter wiring</li>
+            <li><strong>Scripting Language:</strong> MaxScript</li>
+            <li><strong>3D Software:</strong> Autodesk 3ds Max</li>
+            <li><strong>UI Framework:</strong> MaxScript Rollout UI</li>
+            <li><strong>Rigging Systems:</strong> Bones, Position/Orientation Constraints, Control Objects</li>
         </ul>
 
         <hr>
 
         <h3>Development Details</h3>
         <ul>
-            <li><strong>Role:</strong> Technical Artist & Rigger</li>
-            <li><strong>Development Type:</strong> Rigging system development</li>
+            <li><strong>Role:</strong> Technical Artist & Tool Developer</li>
+            <li><strong>Development Type:</strong> MaxScript automation tool</li>
             <li><strong>Context:</strong> Part of Smite character rigging pipeline</li>
-            <li><strong>Platforms:</strong> PC, Console</li>
+            <li><strong>Users:</strong> Character riggers and technical artists</li>
         </ul>
     </div>
 
@@ -101,40 +102,40 @@ include '../../../includes/header.php';
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Orient Constraint System</h3>
-                <p class="project-description">Core gravity direction controlled by orient constraints targeting directional helper objects representing gravity vectors.</p>
+                <h3>Spline-Based Generation</h3>
+                <p class="project-description">Script analyzes selected a selected joint to automatically place bones along the joint's length, maintaining proper spacing and orientation for natural hair flow.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Aim Constraint Hierarchy</h3>
-                <p class="project-description">Secondary aim constraints maintain proper orientation of dangling elements (cloth, hair, accessories) relative to gravity.</p>
+                <h3>Control Object Creation</h3>
+                <p class="project-description">Generates custom shape controls with proper naming, coloring, and hierarchical parenting to provide intuitive animator interfaces.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Control Interface</h3>
-                <p class="project-description">Custom attribute holders provide intuitive slider and dropdown controls for gravity direction and blend weights.</p>
+                <h3>Constraint Automation</h3>
+                <p class="project-description">Automatically configures position and orientation constraints linking controls to bones with proper axis settings.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Baking Pipeline</h3>
-                <p class="project-description">Developed workflow for cleanly baking constraint-driven animation to standard bone hierarchy for engine export.</p>
+                <h3>UI Interface</h3>
+                <p class="project-description">MaxScript rollout interface provides parameter controls for bone count, naming prefixes, control size, and rig options.</p>
             </div>
         </div>
     </div>
 
     <h2>Use Cases</h2>
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
-        <p><strong>Wall-Walking Characters:</strong> Characters with abilities to walk on vertical surfaces required smooth gravity transitions. The rig allowed animators to blend between floor, wall, and ceiling orientations seamlessly.</p>
+        <p><strong>Long Hair Characters:</strong> Characters with flowing hair, ponytails, or braids required FK chains for animator control. The tool quickly generated multi-bone chains following hair strands for natural deformation.</p>
 
-        <p><strong>Cinematic Gravity Changes:</strong> Dramatic camera angles and environmental gravity shifts in cutscenes were achieved by keyframing the gravity direction controls over time.</p>
+        <p><strong>Cloth and Accessories:</strong> Capes, scarves, belts, and dangling accessories benefited from FK chains. The tool enabled rapid setup of control hierarchies for any dangling character elements.</p>
 
-        <p><strong>Zero-Gravity Environments:</strong> By blending gravity influence to zero or switching directions rapidly, animators could create convincing floating and tumbling motions.</p>
+        <p><strong>Tentacles and Tails:</strong> Organic appendages like tails, tentacles, or flexible armor pieces required FK bone chains. The spline-based generation allowed artists to draw the desired shape and instantly create a rig.</p>
     </div>
 
     <h2>Technical Challenges</h2>
@@ -142,42 +143,39 @@ include '../../../includes/header.php';
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Constraint Stability</h3>
-                <p class="project-description">Maintaining stable constraint evaluation order was critical to prevent flipping or gimbal lock during gravity transitions.</p>
+                <h3>Spline Sampling Accuracy</h3>
+                <p class="project-description">Ensuring bones positions accurately while maintaining even spacing required careful mathematical interpolation.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Animation Blending</h3>
-                <p class="project-description">Required careful setup to ensure gravity transitions could blend smoothly with existing locomotion and action animations.</p>
+                <h3>Bone Orientation</h3>
+                <p class="project-description">Calculating proper bone rotations to aim along the spline tangent while avoiding twist required quaternion math and look-at calculations.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Performance Optimization</h3>
-                <p class="project-description">Constraint evaluation overhead required optimization to maintain real-time scrubbing in complex scenes.</p>
+                <h3>Naming Conventions</h3>
+                <p class="project-description">Supporting flexible naming schemes while maintaining pipeline compatibility required careful string handling and validation logic.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Engine Export</h3>
-                <p class="project-description">Ensuring constraint-driven motion baked correctly for Unreal Engine import without losing fidelity.</p>
+                <h3>Error Handling</h3>
+                <p class="project-description">Gracefully handling edge cases like invalid selections, overlapping bones, or existing hierarchies required robust validation and user feedback.</p>
             </div>
         </div>
     </div>
 
     <h2>Lessons Learned</h2>
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
-        <p><strong>Constraints Over Simulation:</strong> For game animation, predictable constraint-based systems proved more artist-friendly than dynamic simulations. Animators valued control over automatic behavior.</p>
+        <p><strong>User Feedback is Essential:</strong> Early versions of the tool had rigid workflows that didn't match artist needs. Iterating with rigger feedback led to flexible parameter controls that accommodated diverse use cases.</p>
 
-        <p><strong>Hierarchy Matters:</strong> Proper constraint hierarchy and evaluation order were essential. Early prototypes suffered from evaluation order issues that caused unpredictable results.</p>
+        <p><strong>Defaults Matter:</strong> Providing intelligent defaults based on common use cases reduced setup time. Artists could quickly generate rigs and only adjust parameters when needed.</p>
 
-        <p><strong>Test Early and Often:</strong> Testing gravity transitions with real animation cycles revealed edge cases that weren't apparent in static poses. Iterative testing with animators was invaluable.</p>
-
-        <p><strong>Documentation Drives Adoption:</strong> Clear documentation with visual examples ensured animators could quickly understand and utilize the gravity controls without technical support.</p>
     </div>
 
     <!-- Navigation -->
