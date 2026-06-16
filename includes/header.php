@@ -22,10 +22,9 @@ if ($current_page === 'index.php' && $current_dir === '/') {
     $active_nav = '/devops.php';
 } elseif ($current_page === 'about.php') {
     $active_nav = '/about.php';
+} elseif ($current_page === 'contact.php') {
+    $active_nav = '/contact';
 }
-// elseif ($current_page === 'contact.php') {
-//    $active_nav = '/contact.php';
-//} 
 
 else {
     // If we're not on any of the main pages, don't highlight home

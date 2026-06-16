@@ -1,2 +1,5 @@
 # Ignore static/img
 /static/img/
+
+# Contact form submissions (runtime data)
+/includes/contact_submissions.json

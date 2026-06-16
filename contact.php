@@ -97,28 +97,41 @@ include 'includes/header.php';
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    const formData = new FormData(this);
-    const submitBtn = this.querySelector('.submit-btn');
+
+    const form = this;
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('.submit-btn');
     const responseDiv = document.getElementById('formResponse');
-    
+
     // Show loading state
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual endpoint)
-    setTimeout(() => {
-        responseDiv.innerHTML = '<div class="success-message">Thank you for your message! I\'ll get back to you soon.</div>';
+    responseDiv.style.display = 'none';
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => response.json().then(data => ({ ok: response.ok, data })))
+    .then(({ ok, data }) => {
+        if (ok && data.success) {
+            responseDiv.innerHTML = '<div class="success-message">' + data.message + '</div>';
+            form.reset();
+        } else {
+            const detail = (data.details && data.details.join(', ')) || data.error || 'Something went wrong.';
+            responseDiv.innerHTML = '<div class="error-message">' + detail + '</div>';
+        }
         responseDiv.style.display = 'block';
-        this.reset();
+    })
+    .catch(() => {
+        responseDiv.innerHTML = '<div class="error-message">Sorry, your message couldn\'t be sent. Please email me directly at cjnowacek@protonmail.com.</div>';
+        responseDiv.style.display = 'block';
+    })
+    .finally(() => {
         submitBtn.textContent = 'Send Message';
         submitBtn.disabled = false;
-        
-        // Hide response after 5 seconds
-        setTimeout(() => {
-            responseDiv.style.display = 'none';
-        }, 5000);
-    }, 1000);
+    });
 });
 </script>
 

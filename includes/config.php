@@ -10,7 +10,7 @@ $nav_items = [
     '/techart' => 'Techart',
     '/devops' => 'Devops',
     '/about' => 'About',
-//    '/contact.php' => 'Contact'
+    '/contact' => 'Contact'
 ];
 
 // Get current page for active nav highlighting
@@ -22,6 +22,10 @@ $site_description = "CJ Nowacek - Technical Artist and DevOps Engineer specializ
 $site_keywords = "technical artist, devops engineer, game development, shader programming, pipeline automation, unreal engine, unity, python automation, ci/cd";
 $site_author = "CJ Nowacek";
 $site_url = "https://cjnowacek.com";
+
+// Contact form
+$contact_email = "cj@cjnowacek.com";        // where submissions are emailed
+$contact_from  = "no-reply@cjnowacek.com";  // From/sender on the cjnowacek.com domain (SPF-friendly)
 
 // Social media links
 $social_links = [

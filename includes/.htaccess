@@ -1,0 +1,12 @@
+# Block direct web access to stored data and config in this directory.
+# PHP includes still work (filesystem access), and contact_handler.php
+# stays reachable for the contact form POST.
+<FilesMatch "\.(json|log)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
