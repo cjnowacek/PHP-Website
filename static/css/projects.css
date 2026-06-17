@@ -1,11 +1,16 @@
 /* static/css/projects.css - Project cards, competency cards, and related components */
 
 /* COMPETENCY CARDS */
-/* Competency grid layout with proper spacing */
+/* Competency grid: consistent gap both directions so cards never touch when
+   they wrap. (Overrides the base .grid 10px gap; items size to the 2rem gap.) */
+.grid.competencies-grid {
+    gap: 2rem;
+}
+
 .grid.competencies-grid .grid-item {
-    flex: 1 1 calc(25% - var(--grid-gap));
-    max-width: calc(25% - var(--grid-gap));
-    margin-bottom: 30px;
+    flex: 1 1 calc(25% - 1.5rem);
+    max-width: calc(25% - 1.5rem);
+    margin-bottom: 0;
 }
 
 /* Competency card styling */

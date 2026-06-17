@@ -4,9 +4,9 @@
 @media (max-width: 900px) {
     /* Competency cards: 2 per row */
     .grid.competencies-grid .grid-item {
-        flex: 1 1 calc(50% - var(--grid-gap));
-        max-width: calc(50% - var(--grid-gap));
-        margin-bottom: 30px;
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        margin-bottom: 0;
     }
 }
 
@@ -81,14 +81,10 @@
 }
 
 @media (max-width: 600px) {
-    /* Competency cards: 1 per row (stacked) */
+    /* Competency cards: 1 per row (stacked) — gap handles vertical spacing */
     .grid.competencies-grid .grid-item {
         flex: 1 1 100%;
         max-width: 100%;
-        margin-bottom: 30px;
-    }
-    
-    .competencies-grid .grid-item:last-child {
         margin-bottom: 0;
     }
     
