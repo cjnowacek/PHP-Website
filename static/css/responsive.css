@@ -1,15 +1,8 @@
 /* static/css/responsive.css - All media queries and responsive styles */
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 900px) {
-    /* Competency cards: 2 per row */
-    .grid.competencies-grid .grid-item {
-        flex: 1 1 calc(50% - 1rem);
-        max-width: calc(50% - 1rem);
-        margin-bottom: 0;
-    }
-}
-
+/* Competency cards now use CSS Grid auto-fit (see projects.css) — it collapses
+   from 4 to 2 to 1 column on its own, so no per-breakpoint overrides are needed. */
 @media (max-width: 768px) {
     .container {
         max-width: 95%;
@@ -81,13 +74,6 @@
 }
 
 @media (max-width: 600px) {
-    /* Competency cards: 1 per row (stacked) — gap handles vertical spacing */
-    .grid.competencies-grid .grid-item {
-        flex: 1 1 100%;
-        max-width: 100%;
-        margin-bottom: 0;
-    }
-    
     .competencies-grid .grid-item .project-info {
         padding: 1.5rem;
     }

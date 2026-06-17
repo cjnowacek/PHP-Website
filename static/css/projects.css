@@ -1,16 +1,18 @@
 /* static/css/projects.css - Project cards, competency cards, and related components */
 
 /* COMPETENCY CARDS */
-/* Competency grid: consistent gap both directions so cards never touch when
-   they wrap. (Overrides the base .grid 10px gap; items size to the 2rem gap.) */
+/* CSS Grid for rock-solid, even gaps in every wrap state (auto-fit collapses to
+   4 / 2 / 1 columns as width shrinks). Replaces the flex layout whose row-gap
+   rendered inconsistently when cards wrapped. */
 .grid.competencies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
 }
 
 .grid.competencies-grid .grid-item {
-    flex: 1 1 calc(25% - 1.5rem);
-    max-width: calc(25% - 1.5rem);
-    margin-bottom: 0;
+    max-width: none;
+    margin: 0;
 }
 
 /* Competency card styling */
