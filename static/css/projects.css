@@ -68,7 +68,6 @@
     width: auto;
     min-width: 120px;
 }
-}
 
 .competency-link:hover {
     background: var(--subheader-color);
@@ -158,9 +157,9 @@
     opacity: 0;
 }
 
-.project-highlights 
+.project-highlights {
     list-style-position: inside;
-    padding-left: 0;{
+    padding-left: 0;
     margin: 1.5rem 0;
 }
 
