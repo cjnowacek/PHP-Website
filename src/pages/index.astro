@@ -24,11 +24,6 @@ const featuredProjects = await getProjectCards([
       </p>
     </div>
 
-    <h2>Featured Projects</h2>
-    <div class="projects-container projects-container-index">
-      {featuredProjects.map((project) => <ProjectCard project={project} />)}
-    </div>
-
     <h2>Core Competencies</h2>
     <div class="grid competencies-grid">
       <div class="grid-item">
@@ -52,6 +47,11 @@ const featuredProjects = await getProjectCards([
           <a href="https://github.com/cjnowacek" target="_blank" class="competency-link">Goto Github</a>
         </div>
       </div>
+    </div>
+
+    <h2>Featured Projects</h2>
+    <div class="projects-container projects-container-index">
+      {featuredProjects.map((project) => <ProjectCard project={project} />)}
     </div>
   </div>
 
