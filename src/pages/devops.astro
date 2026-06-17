@@ -46,7 +46,13 @@ const devopsProjects = devopsProjectIds
       </div>
     </div>
 
-    <h2>Featured Projects</h2>
+    <h2>ML3DS — Render Farm Studio Pipeline</h2>
+    <div class="about-text" style="max-width: 800px; margin: 0 auto 30px auto; text-align: left;">
+      <p>
+        Automation and tooling for a ~130-machine 3ds Max render farm — from unattended, farm-wide
+        software deployment to a self-updating pipeline application shipped across two studios.
+      </p>
+    </div>
     <div class="projects-container">
       {devopsProjects.map((project) => <ProjectCard project={project} />)}
     </div>
