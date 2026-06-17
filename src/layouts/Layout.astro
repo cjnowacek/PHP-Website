@@ -1,6 +1,10 @@
 ---
 // src/layouts/Layout.astro — ported from includes/header.php + footer.php
 import { siteName, siteTitle, siteDescription, navItems } from '../config.js';
+// Bundle the global CSS through Astro so it gets a content-hashed filename.
+// This auto-busts the browser cache whenever the CSS changes (the old
+// /static/css/main.css link cached its @import'd files indefinitely).
+import '../../static/css/main.css';
 
 const { title } = Astro.props;
 const pageTitle = title ? `${title} - ${siteName}` : siteTitle;
@@ -24,7 +28,6 @@ const year = new Date().getFullYear();
     <meta name="author" content="CJ Nowacek" />
     <meta name="description" content={siteDescription} />
     <title>{pageTitle}</title>
-    <link rel="stylesheet" href="/static/css/main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
