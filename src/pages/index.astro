@@ -5,9 +5,14 @@ import ProjectCard from '../components/ProjectCard.astro';
 import { projects } from '../data/projects.js';
 
 // Control which projects appear and in what order.
-// TODO: add the techart ids (whisper-from-the-stars, smite, runaway, sintern)
-// once those cards are ported into src/data/projects.js.
-const featuredProjectIds = ['deadline-deploy', 'omnitool'];
+const featuredProjectIds = [
+  'whisper-from-the-stars',
+  'smite',
+  'runaway',
+  'sintern',
+  'deadline-deploy',
+  'omnitool',
+];
 const featuredProjects = featuredProjectIds
   .map((id) => projects.find((p) => p.id === id))
   .filter(Boolean);
