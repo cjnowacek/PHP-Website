@@ -1,0 +1,157 @@
+---
+title: Envelope Export Tool
+company: Hi-Rez Studios
+category: techart
+featured: false
+order: 100
+pageTitle: Envelope Export Tool - Technical Art
+image: /static/img/project-cards/skinExporter-webp-1200x900.webp
+gif: /static/img/project-cards/skinExporter-webp-1200x900.webp
+description: >-
+  MaxScript tool for exporting mesh envelopes and importing skinning data. Streamlines the
+  workflow for transferring skin weights between files in 3ds Max.
+highlights:
+  - Automated envelope extraction from existing meshes
+  - Simplified skin weight transfer workflow
+tech_tags: [3D Studio Max, MaxScript]
+meta:
+  duration: Part of Smite project
+  role: Technical Artist
+  platforms: PC
+  team_size: Individual tool
+---
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+**Hi-Rez Studios | 3ds Max & MaxScript**
+
+A MaxScript utility developed to streamline the workflow of transferring mesh envelopes and skinning data between files in 3ds Max. This tool exports envelope information from existing meshes, allowing artists to easily add them to new files and load in the skinning data without manual recreation.
+
+This tool was created to address a common pain point in character production workflows where skin weight data needed to be transferred or replicated across multiple asset files, particularly during character porting and variant creation.
+
+</div>
+
+## Key Features
+
+<div class="grid competencies-grid">
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>Envelope Extraction</h3>
+      <p class="project-description">Automatically extracts envelope data from selected meshes, preserving all skin modifier information and bone influence data.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>Data Import</h3>
+      <p class="project-description">Imports previously exported envelope data onto new meshes, recreating skin modifiers with correct bone assignments and weight values.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>Workflow Integration</h3>
+      <p class="project-description">Seamlessly integrates into existing 3ds Max pipelines with simple UI and batch processing capabilities.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>Error Handling</h3>
+      <p class="project-description">Validates bone hierarchies and provides clear feedback when mismatches occur, preventing data corruption.</p>
+    </div>
+  </div>
+</div>
+
+## Tool Demo
+
+<div class="demo-reel">
+  <div class="video-container">
+    <iframe title="Evelope exporter"
+            src="https://www.youtube.com/embed/clCQRT6Jh8g"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+## Tool Impact
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+Reduced repetitive manual work in character skinning workflows, enabling faster iteration and more consistent results across character variants and ports. Particularly valuable when working with the large character roster in Smite.
+
+- **Time Savings:** Eliminated hours of manual skin weight recreation per character
+- **Consistency:** Ensured identical skinning data across character variants
+- **Error Reduction:** Automated process reduced human error in weight transfer
+- **Workflow Flexibility:** Enabled non-destructive experimentation with skinning approaches
+
+---
+
+### Technology Stack
+
+- **3D Software:** 3ds Max
+- **Scripting Language:** MaxScript
+- **Data Format:** Custom XML/text-based envelope data structure
+
+---
+
+### Development Details
+
+- **Role:** Technical Artist & Tool Developer
+- **Development Type:** Individual tool development
+- **Context:** Part of Smite character production pipeline
+- **Platform:** PC (3ds Max environment)
+
+</div>
+
+## Technical Implementation
+
+<div class="grid competencies-grid">
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>Skin Modifier Parsing</h3>
+      <p class="project-description">Accesses and extracts all vertex weight data, bone assignments, and envelope parameters from the Skin modifier interface.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>Data Serialization</h3>
+      <p class="project-description">Converts complex skin data into a portable format that can be stored and transferred between Max files.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>Bone Hierarchy Matching</h3>
+      <p class="project-description">Intelligently matches bone names and hierarchy structures between source and destination scenes.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>UI Design</h3>
+      <p class="project-description">Simple, artist-friendly interface with clear export/import workflow and progress feedback.</p>
+    </div>
+  </div>
+</div>
+
+## Use Cases
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+**Character Porting:** When bringing characters from Smite to its sequel, this tool allowed rapid transfer of proven skin weight data to new mesh topology after retopology adjustments.
+
+**Skin Variants:** Creating alternate costumes or visual variants required replicating skinning data across similar mesh structures. The tool made this process instant rather than manual.
+
+**Backup and Recovery:** Artists could export and archive working skinning data as a safety measure before experimental modifications, allowing quick rollback if needed.
+
+</div>
+
+## Lessons Learned
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+**Data Validation is Critical:** Early versions didn't thoroughly validate bone hierarchies, leading to crashes. Adding comprehensive validation and clear error messages made the tool production-ready.
+
+**Artist Feedback Drives Features:** Initial design was purely export/import. Artist requests led to additions like selective bone export and partial weight transfer capabilities.
+
+**Simple UI Wins:** Keeping the interface simple and workflow-focused led to higher adoption than more feature-rich but complex alternatives.
+
+</div>

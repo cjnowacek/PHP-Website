@@ -1,0 +1,22 @@
+---
+// src/components/Expandable.astro — collapsible section (ports the .expandable-section
+// + .expand-toggle pattern from the PHP detail pages). Slot holds the content.
+const { title } = Astro.props;
+---
+<div class="expandable-section">
+  <button class="expand-toggle">{title} <span class="toggle-icon">▼</span></button>
+  <div class="expandable-content">
+    <slot />
+  </div>
+</div>
+
+<script>
+  // Astro bundles this module script once per page no matter how many Expandables
+  // are used, so the listener is attached to every toggle exactly once.
+  document.querySelectorAll('.expand-toggle').forEach((button) => {
+    button.addEventListener('click', function () {
+      this.classList.toggle('active');
+      this.nextElementSibling?.classList.toggle('active');
+    });
+  });
+</script>

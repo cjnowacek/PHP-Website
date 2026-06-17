@@ -1,0 +1,33 @@
+---
+// src/layouts/ProjectDetail.astro — shared wrapper for every project detail page.
+// The MDX body is slotted in below the title.
+import Layout from './Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const { project } = Astro.props;
+const d = project.data;
+const categoryLabel = d.category === 'devops' ? 'DevOps' : 'Technical Art';
+const categoryHref = d.category === 'devops' ? '/devops' : '/techart';
+const title = d.pageTitle ?? `${d.title} - ${categoryLabel}`;
+---
+<Layout title={title}>
+  <div class="container" style="max-width: 1300px;">
+    <Breadcrumb
+      crumbs={[
+        { label: 'Home', href: '/' },
+        { label: categoryLabel, href: categoryHref },
+        { label: d.title },
+      ]}
+    />
+
+    <h2>{d.title}</h2>
+
+    <slot />
+
+    <div style="display: flex; justify-content: flex-start; margin: 60px 0 40px 0; gap: 20px;">
+      <a href={categoryHref} class="project-link" style="background: var(--form-bg); color: var(--text-color);">
+        ← Back to {categoryLabel}
+      </a>
+    </div>
+  </div>
+</Layout>

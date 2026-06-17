@@ -1,0 +1,20 @@
+---
+// src/pages/devops/[...slug].astro — renders every DevOps project detail page from
+// the projects collection. id (e.g. 'deadline-deploy') becomes /devops/<id>.
+import { getCollection, render } from 'astro:content';
+import ProjectDetail from '../../layouts/ProjectDetail.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', (p) => p.data.category === 'devops');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+<ProjectDetail project={project}>
+  <Content />
+</ProjectDetail>

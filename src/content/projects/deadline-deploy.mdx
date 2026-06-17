@@ -1,0 +1,163 @@
+---
+title: Render Farm Deploy Automation
+company: Render Farm Infrastructure
+category: devops
+featured: true
+order: 1
+pageTitle: Render Farm Deploy Automation - DevOps
+description: >-
+  Python automation that installs 3ds Max (2024/2026) and the full plugin stack — V-Ray,
+  Phoenix FD, Anima, Forest Pack — across ~130 Windows render nodes, executed remotely and
+  unattended through AWS Thinkbox Deadline.
+highlights:
+  - Automated 3ds Max + plugin installs across ~130 Windows render nodes
+  - Remote, unattended rollout via Deadline workers — no hands-on per machine
+  - SYSTEM-level elevation through scheduled tasks (workers stay non-admin)
+  - Dry-run mode and --continue-on-fail for safe, resilient deployments
+tech_tags: [Python, AWS Thinkbox Deadline, Windows, Render Farm, Automation]
+meta:
+  role: Pipeline & DevOps
+  platforms: Windows render farm (~130 nodes)
+  team_size: Solo
+---
+import Expandable from '../../components/Expandable.astro';
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+**3ds Max Render Farm Pipeline | Python & AWS Thinkbox Deadline | Windows**
+
+Standing up a new DCC version across a render farm used to mean walking every machine — running
+installers by hand, copying plugin files, and praying the configuration matched. This project
+replaces that with a single Python toolchain that installs **3ds Max 2024/2026** and its full
+plugin stack — **V-Ray, Phoenix FD, Anima, and Forest Pack** — across roughly **130 Windows render
+nodes**, executed remotely and unattended through AWS Thinkbox Deadline.
+
+The hard part isn't running an installer — it's running it *silently, elevated, and reliably* on
+machines whose render-worker accounts deliberately aren't administrators. The system solves that
+with a SYSTEM-level elevation model built on Windows scheduled tasks, UNC-share execution, and a
+dry-run mode that lets every rollout be rehearsed before it touches production.
+
+</div>
+
+## Key Features
+
+<div class="grid competencies-grid">
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>🚀 One-Command Rollout</h3>
+      <p class="project-description">A single orchestrator deploys Max plus any subset of plugins to the whole farm via Deadline jobs — no per-machine babysitting.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>🔐 SYSTEM Elevation</h3>
+      <p class="project-description">Installs run elevated as SYSTEM through a scheduled-task runner, so render workers never need to be local administrators.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>🧪 Dry-Run Safety</h3>
+      <p class="project-description">Every deployment can be simulated first — validating installer paths and file existence before a single change is made.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>📦 Stdlib Only</h3>
+      <p class="project-description">Runs on Deadline's embedded Python with zero external dependencies — nothing to pip-install on 130 machines.</p>
+    </div>
+  </div>
+</div>
+
+## How It Works
+
+<Expandable title="Orchestration Pattern">
+
+A single entry point, `deadline_install_main.py`, holds a `DEPLOYABLES` dictionary that maps each
+component key to a display name and its installer function. The orchestrator iterates the requested
+components and runs each installer in sequence. Adding a new package — a new Max version, a new
+plugin — is a matter of writing one `install_<name>.py` module and registering it in the dict.
+
+```python
+# deadline_install_main.py — single entry point
+DEPLOYABLES = {
+    "max2024":    ("3ds Max 2024",    install_max2024.install),
+    "max2026":    ("3ds Max 2026",    install_max2026.install),
+    "vray6":      ("V-Ray 6",         install_vray6.install),
+    "vray7":      ("V-Ray 7",         install_vray7.install),
+    "phoenix":    ("Phoenix FD",      install_phoenix.install),
+    "anima":      ("Anima",           install_anima.install),
+    "forestpack": ("Forest Pack Pro", install_forestpack.install),
+}
+
+# Each install_*.py exposes an install() returning an int exit code.
+# Adding a component = new module + one entry here.
+```
+
+</Expandable>
+
+<Expandable title="Running a Deployment">
+
+Scripts live on a UNC share and are invoked on each node by Deadline's render worker. The CLI
+selects exactly which components to install and supports a full dry run.
+
+```bat
+REM Default install (3ds Max 2026 + V-Ray 7)
+"C:\Program Files\Thinkbox\Deadline10\bin\python3\python.exe" ^
+  "\\mapdrives\...\DL_Deploy\deadline_install_main.py"
+
+REM Install a specific subset of components
+... deadline_install_main.py --only max2024,vray6
+
+REM Max 2026 + every plugin
+... deadline_install_main.py --only max2026,vray7,phoenix,anima,forestpack
+
+REM Rehearse without changing anything
+... deadline_install_main.py --dry-run
+
+REM Keep going even if one component fails
+... deadline_install_main.py --continue-on-fail
+```
+
+</Expandable>
+
+<Expandable title="The Elevation Model">
+
+The interesting engineering lives in `deploy_lib.py`. Render workers run as non-admin accounts, but
+installers need to run as SYSTEM. The `run_elevated()` helper uses a three-tier strategy so
+deployments work whether or not a machine has been pre-provisioned:
+
+- **Already elevated** → run the command directly.
+- **Permanent runner exists** → reuse the pre-created `DeadlineElevatedRunner` scheduled task (set up once per machine via `setup_elevated_runner.py`).
+- **Fallback** → create, run, and delete a temporary scheduled task on the fly.
+
+Because UNC installers aren't reachable by the SYSTEM context directly, `run_installer_copied()`
+stages each installer to a local temp directory, runs it elevated, and cleans up afterward. A
+global `DRY_RUN` flag short-circuits every action into a simulated log line.
+
+</Expandable>
+
+## Business Impact
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+- **~130 machines, zero hands-on:** A farm-wide DCC + plugin rollout that once meant visiting every workstation now runs as a Deadline job.
+- **Consistent configuration:** Every node installs from the same images and the same code path, eliminating per-machine drift.
+- **Non-admin by design:** Workers stay locked down; elevation is scoped to a single, auditable scheduled task.
+- **Safe to rehearse:** Dry-run mode validates the whole plan before production deployment.
+- **Resilient rollouts:** `--continue-on-fail` allows partial installs to complete instead of halting the entire batch.
+
+### Technology Stack
+
+- **Language:** Python 3 (Deadline's embedded interpreter), standard library only
+- **Render management:** AWS Thinkbox Deadline 10
+- **Windows internals:** `schtasks`, `robocopy`, `ctypes.windll`, UNC shares
+- **Targets:** 3ds Max 2024 / 2026, V-Ray 6 / 7, Phoenix FD, Anima, Forest Pack Pro
+
+### Design Principles
+
+- **Single entry point:** One orchestrator, one component registry, predictable sequencing.
+- **Pluggable installers:** New software = one new module + one registry line.
+- **No external dependencies:** Nothing to install on the nodes before the deployer can run.
+- **Simulate before you ship:** Dry-run is a first-class mode, not an afterthought.
+
+</div>

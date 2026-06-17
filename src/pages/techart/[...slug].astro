@@ -1,0 +1,21 @@
+---
+// src/pages/techart/[...slug].astro — renders every Technical Art project detail page
+// from the projects collection. id (e.g. 'smite' or 'smite/gravity-switch') becomes
+// /techart/<id>, so nested sub-tools route correctly.
+import { getCollection, render } from 'astro:content';
+import ProjectDetail from '../../layouts/ProjectDetail.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', (p) => p.data.category === 'techart');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+<ProjectDetail project={project}>
+  <Content />
+</ProjectDetail>

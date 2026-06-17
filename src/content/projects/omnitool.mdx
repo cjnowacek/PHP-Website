@@ -1,0 +1,157 @@
+---
+title: OmniTool — Pipeline App
+company: Pipeline Tooling
+category: devops
+featured: true
+order: 2
+pageTitle: "OmniTool — Pipeline App - DevOps"
+description: >-
+  A Python/PyQt application for automating 3ds Max scene prep and render-farm job submission.
+  One codebase runs as a CLI, a desktop GUI, and natively inside Max — shipped as a self-updating,
+  EDR-whitelisted single-file executable to ~130 machines across two studios.
+highlights:
+  - One codebase runs as CLI, PyQt GUI, and natively inside 3ds Max
+  - Single-file PyInstaller build tuned to pass studio EDR (SentinelOne)
+  - 'Self-updating: per-user task SHA-256 checks the share every 10 minutes'
+  - Headless install/uninstall with automatic Max startup-listener bootstrap
+tech_tags: [Python, PyQt, 3ds Max / pymxs, PyInstaller, PowerShell]
+meta:
+  role: Pipeline & Tools Developer
+  platforms: Windows · 3ds Max 2022–2026
+  team_size: Solo
+---
+import Expandable from '../../components/Expandable.astro';
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+**3ds Max Pipeline Tooling | Python · PyQt · PyInstaller | Windows**
+
+OmniTool is a Python application for automating **3ds Max scene preparation and render-farm job
+submission**. Its defining trait is reach: a single core library runs from three completely
+different contexts — a command line, a PyQt desktop GUI, and natively inside 3ds Max through
+`pymxs` — with the same code doing the work in each.
+
+Just as interesting is how it ships. OmniTool is delivered as a self-updating, single-file
+executable to roughly **130 machines across two independent studios**, and a large share of the
+engineering went into making that distribution survive real-world studio constraints: endpoint
+security (SentinelOne EDR), locked-down accounts, flaky drive mappings, and the quirks of
+embedding a Qt app inside Max.
+
+</div>
+
+## Key Features
+
+<div class="grid competencies-grid">
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>🧩 One Core, Three Front-Ends</h3>
+      <p class="project-description">A UI-agnostic core library powers a CLI, a PyQt GUI, and in-Max execution. The connection layer auto-detects native vs. external.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>🛡️ EDR-Aware Packaging</h3>
+      <p class="project-description">PyInstaller build deliberately tuned — onefile, UPX off, redirected runtime tmpdir — so the studio's SentinelOne whitelist applies cleanly.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>🔄 Silent Auto-Updater</h3>
+      <p class="project-description">A per-user scheduled task SHA-256-compares the share build every 10 minutes and prompts to update — with a per-build decline memory.</p>
+    </div>
+  </div>
+  <div class="grid-item">
+    <div class="project-info">
+      <h3>🏢 Two-Studio Deploy</h3>
+      <p class="project-description">Independent share roots, databases, and push cadences per studio, with each machine bound to its origin via a studio sentinel file.</p>
+    </div>
+  </div>
+</div>
+
+## How It Works
+
+<Expandable title="Architecture">
+
+The core library has *zero* UI knowledge — the CLI and GUI are thin shells over it. The connection
+is injected by a `get_connection()` factory that auto-detects whether OmniTool is running natively
+inside Max or talking to it externally (COM / socket). A Python 3.7 floor keeps it compatible with
+the interpreter bundled in Max 2022, all the way up to 3.12 in Max 2026.
+
+```text
+omnitool/
+├── connection/    Transport layer (COM, socket, native pymxs)
+├── max/           MXS execution, scene operations
+├── sini/          Sini IgNite / Forensic / Unite wrappers
+├── pipeline/      Scene-prep orchestrator, submission logic
+├── diagnostics/   Health checks, INI sidecar caching
+├── models/        Pure data objects (reports, configs, manifests)
+├── config.py      Farm paths, defaults
+└── cli.py         CLI entry point
+```
+
+Common commands across every context:
+
+```bash
+# Diagnose connection + scene health
+omnitool diagnose --scene shot_001.max
+
+# Prep a scene (cleanup, relink, preflight)
+omnitool prep --scene shot_001.max
+
+# Force fresh diagnostics, bypassing the INI cache
+omnitool diagnose --scene shot_001.max --force
+```
+
+</Expandable>
+
+<Expandable title="Surviving Studio EDR">
+
+Shipping a PyInstaller binary into a studio running SentinelOne meant the packaging choices *were*
+the feature. Each setting in the build spec exists because an alternative tripped the
+endpoint-security stack:
+
+- **onefile, not onedir** — SentinelOne flagged the onedir launcher + `_internal\` DLL layout as DLL sideloading. The studio whitelist applies cleanly only to the single-file build.
+- **UPX disabled** — UPX-packed binaries trip static analysis regardless of payload.
+- **Redirected runtime tmpdir** — the bootloader extracts to `%LOCALAPPDATA%\OmniTool\runtime` instead of `%TEMP%`, reducing AV friction and avoiding orphaned extraction folders.
+- **Explicit AppUserModelID** — set before `QApplication` starts so Windows shows OmniTool's icon instead of the generic embedded-Python feather.
+
+</Expandable>
+
+<Expandable title="Install & Auto-Update Flow">
+
+The shippable artifact is a flat four-file bundle that mirrors 1:1 to a studio share. `install.bat`
+copies the exe to the user's desktop, drops a shortcut, headlessly installs the Max startup listener
+via `omnitool.exe --install-listener`, writes a studio sentinel, and registers a per-user
+**OmniTool Updater** scheduled task. `uninstall.bat` reverses every step in pure batch — no
+dependency on the exe.
+
+The updater task then runs every 10 minutes and:
+
+1. Reads the studio sentinel to find the pinned share root.
+2. SHA-256-compares the share's `omnitool.exe` against the local copy; exits silently if they match.
+3. Honors a per-hash "decline" file, so saying No to one build doesn't nag — but a fresh push invalidates the decline automatically.
+4. Otherwise prompts with a 60-second auto-yes timer, then shells `install.bat` in unattended mode and relaunches.
+
+A named mutex prevents two concurrent prompts, and the same flow is reachable manually from
+**Help → Check for Updates…** in the GUI.
+
+</Expandable>
+
+## Engineering Highlights
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+- **Robust drive-path resolution:** The SQLite DB root resolves to the mapped `T:` drive when present and falls back to its UNC equivalent — because fresh logons and Deadline workers don't always have login-script drive mappings in place.
+- **Crash-free in-Max listener:** The job-queue pump was moved off a `System.Windows.Forms.Timer` (which faulted re-entrantly inside the .NET↔MaxScript marshaling layer) onto a native MaxScript `rollout timer` hosted in an off-screen dialog — eliminating a class of unhandled-exception crashes.
+- **Two independent studios:** Each studio has its own bundle copy, its own database, and its own push cadence, with no cross-studio fallback — a machine pulls only from the studio it was installed from.
+
+---
+
+### Technology Stack
+
+- **Language:** Python 3.7–3.12 (Max-bundled interpreters)
+- **GUI:** PyQt
+- **Max integration:** `pymxs`, MaxScript, COM & socket transports
+- **Packaging & deploy:** PyInstaller (onefile), PowerShell updater, Windows scheduled tasks, SQLite
+
+</div>

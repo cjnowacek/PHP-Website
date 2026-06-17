@@ -1,0 +1,17 @@
+---
+// src/components/Breadcrumb.astro
+// crumbs: array of { label, href? } — the last item (no href) is the current page.
+const { crumbs } = Astro.props;
+---
+<nav style="margin: 20px 0; color: var(--text-secondary); font-size: 14px;">
+  {crumbs.map((c, i) => (
+    <Fragment>
+      {i > 0 && <span> &gt; </span>}
+      {c.href ? (
+        <a href={c.href} style="color: var(--header-color); text-decoration: none;">{c.label}</a>
+      ) : (
+        <span>{c.label}</span>
+      )}
+    </Fragment>
+  ))}
+</nav>

@@ -2,12 +2,9 @@
 // src/pages/devops.astro — ported from devops.php
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { projects } from '../data/projects.js';
+import { getProjectCards } from '../lib/projects.js';
 
-const devopsProjectIds = ['deadline-deploy', 'omnitool'];
-const devopsProjects = devopsProjectIds
-  .map((id) => projects.find((p) => p.id === id))
-  .filter(Boolean);
+const devopsProjects = await getProjectCards(['deadline-deploy', 'omnitool']);
 ---
 <Layout title="DevOps">
   <div class="container" style="max-width: 1300px;">

@@ -2,13 +2,15 @@
 // src/pages/index.astro — ported from index.php
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { projects } from '../data/projects.js';
+import { getProjectCards } from '../lib/projects.js';
 
 // Control which projects appear and in what order.
-const featuredProjectIds = ['whisper-from-the-stars', 'smite', 'runaway', 'sintern'];
-const featuredProjects = featuredProjectIds
-  .map((id) => projects.find((p) => p.id === id))
-  .filter(Boolean);
+const featuredProjects = await getProjectCards([
+  'whisper-from-the-stars',
+  'smite',
+  'runaway',
+  'sintern',
+]);
 ---
 <Layout title="Home">
   <div class="container" style="max-width: 1300px;">

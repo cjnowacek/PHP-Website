@@ -1,6 +1,5 @@
-# Ignore static/img
+# Ignore static/img (served in Astro via the public/static -> ../static symlink)
 /static/img/
-/public/static/img/
 
 # Contact form submissions (runtime data)
 /includes/contact_submissions.json
