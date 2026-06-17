@@ -1,0 +1,41 @@
+---
+title: Media Lab
+company: Render Farm Studio
+category: devops
+featured: true
+order: 0
+pageTitle: Media Lab — Render Farm Pipeline - DevOps
+description: >-
+  Render-farm automation and pipeline tooling for a ~130-machine 3ds Max studio — from
+  unattended, farm-wide software deployment to a self-updating pipeline application shipped
+  across two studios.
+highlights:
+  - Automated 3ds Max + plugin deployment across ~130 Windows render nodes
+  - Self-updating pipeline app — CLI, GUI, and native in-Max from one codebase
+  - SYSTEM-level Windows automation via scheduled tasks and UNC shares
+tech_tags: [Python, AWS Thinkbox Deadline, PyQt, PyInstaller, Windows]
+meta:
+  role: Pipeline & DevOps
+  platforms: Windows · 3ds Max render farm (~130 nodes)
+  team_size: Solo
+---
+import ProjectGrid from '../../components/ProjectGrid.astro';
+
+<div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+
+**Media Lab | 3ds Max Render Farm Pipeline | Python · Windows**
+
+My DevOps and pipeline work at Media Lab centered on a ~130-machine 3ds Max render farm:
+keeping every node consistent, and giving artists tooling that just works. Two systems carry
+most of that story — one that **deploys** software across the whole farm unattended, and one
+that **runs the pipeline** itself, from scene prep to render-farm job submission.
+
+Both are built on standard-library Python and Windows internals (scheduled tasks, UNC shares,
+SYSTEM-level execution), packaged and shipped to run reliably on locked-down studio machines
+across two facilities.
+
+</div>
+
+## Projects
+
+<ProjectGrid ids={["deadline-deploy", "omnitool"]} />

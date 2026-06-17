@@ -1,0 +1,12 @@
+---
+// src/components/ProjectGrid.astro — render a row of project cards by id.
+// Usable from .astro pages and MDX bodies (e.g. a studio overview page).
+import { getProjectCards } from '../lib/projects.js';
+import ProjectCard from './ProjectCard.astro';
+
+const { ids } = Astro.props;
+const projects = await getProjectCards(ids);
+---
+<div class="projects-container">
+  {projects.map((project) => <ProjectCard project={project} />)}
+</div>
