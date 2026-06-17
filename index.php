@@ -8,7 +8,9 @@ $featuredProjectIds = [
   'whisper-from-the-stars',
     'smite',
     'runaway',
-    'sintern'
+    'sintern',
+    'deadline-deploy',
+    'omnitool'
 ];
 
 // Load the specific projects you want

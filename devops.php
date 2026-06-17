@@ -5,6 +5,8 @@ include 'includes/project-components/project_loader.php';
 include 'includes/project-components/project_card.php';
 
 $devopsProjectIds = [
+  'deadline-deploy',
+  'omnitool',
 #  'bash-tools',
 #  'php-website'
 ];
