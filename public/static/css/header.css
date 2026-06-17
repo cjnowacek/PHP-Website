@@ -1,0 +1,97 @@
+/* static/css/header.css - Header, navigation, and title styles */
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-bottom: 20px;
+}
+
+.title__container {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.title__container h1 {
+    font-family: Cambria, Georgia, serif;
+    color: var(--header-color);
+    margin: 0 0 20px 0;
+    font-size: 3.5em;
+}
+
+.title__container nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.title__container nav a {
+    color: var(--subheader-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Cambria, Georgia, serif;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.title__container nav a:hover,
+.title__container nav a.active {
+    color: var(--header-color);
+}
+
+.name {
+    font-family: Cambria, Georgia, serif; 
+    color: var(--header-color);
+    padding: 10px;
+    margin: 0;
+}
+
+/* Navigation styles */
+.nav {
+    font-family: Cambria, Georgia, serif; 
+    color: black;
+    font-size: 50px;
+    line-height: 1.6em;
+    text-transform: uppercase;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 50%;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    color: var(--subheader-color);
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--header-color);
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    margin: 20px 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: var(--header-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}

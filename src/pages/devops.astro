@@ -1,0 +1,65 @@
+---
+// src/pages/devops.astro — ported from devops.php
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects.js';
+
+const devopsProjectIds = ['deadline-deploy', 'omnitool'];
+const devopsProjects = devopsProjectIds
+  .map((id) => projects.find((p) => p.id === id))
+  .filter(Boolean);
+---
+<Layout title="DevOps">
+  <div class="container" style="max-width: 1300px;">
+    <h2>DevOps & Infrastructure</h2>
+
+    <hr />
+
+    <div style="text-align: center; margin: 40px 0;">
+      <a
+        href="/static/files/CJ-Nowacek-IT-Resume.pdf"
+        class="resume-download-btn"
+        target="_blank"
+        rel="noopener">Download DevOps Resume (PDF)</a
+      >
+    </div>
+
+    <h2>Core Competencies</h2>
+    <div class="grid competencies-grid">
+      <div class="grid-item">
+        <div class="project-info">
+          <h3>Automation Scripting</h3>
+          <p class="project-description">
+            Python/bash automation for infrastructure provisioning, asset processing, and build
+            system optimization
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="project-info">
+          <h3>Containerization</h3>
+          <p class="project-description">
+            Docker containers and orchestration for consistent environments and deployments
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Featured Projects</h2>
+    <div class="projects-container">
+      {devopsProjects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.project-card').forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        const gif = item.querySelector('.hover-gif');
+        if (gif && gif.src) {
+          gif.src = gif.src;
+        }
+      });
+    });
+  </script>
+</Layout>

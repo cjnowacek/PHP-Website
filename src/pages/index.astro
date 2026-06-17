@@ -1,0 +1,67 @@
+---
+// src/pages/index.astro — ported from index.php
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects.js';
+
+// Control which projects appear and in what order.
+// TODO: add the techart ids (whisper-from-the-stars, smite, runaway, sintern)
+// once those cards are ported into src/data/projects.js.
+const featuredProjectIds = ['deadline-deploy', 'omnitool'];
+const featuredProjects = featuredProjectIds
+  .map((id) => projects.find((p) => p.id === id))
+  .filter(Boolean);
+---
+<Layout title="Home">
+  <div class="container" style="max-width: 1300px;">
+    <h2>Welcome!</h2>
+    <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
+      <p>
+        Welcome to my digital workshop. I explore how tools, pipelines, and automation can expand the
+        boundaries of creative expression. Every project here represents a step toward that vision:
+        connecting art and engineering into systems built for people and possibility.
+      </p>
+    </div>
+
+    <h2>Core Competencies</h2>
+    <div class="grid competencies-grid">
+      <div class="grid-item">
+        <div class="project-info">
+          <h3>
+            <i class="fa-solid fa-code" style="color:blue; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Automation Scripting
+          </h3>
+          <p class="project-description">
+            Python automation for infrastructure provisioning and asset processing
+          </p>
+          <a href="/devops" class="competency-link">View Projects</a>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="project-info">
+          <h3>
+            <i class="fa-brands fa-github" style="color:#1e3050; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Github
+          </h3>
+          <p class="project-description">Preview of some of my coding projects</p>
+          <a href="https://github.com/cjnowacek" target="_blank" class="competency-link">Goto Github</a>
+        </div>
+      </div>
+    </div>
+
+    <h2>Featured Projects</h2>
+    <div class="projects-container projects-container-index">
+      {featuredProjects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.project-card').forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        const gif = item.querySelector('.hover-gif');
+        if (gif && gif.src) {
+          gif.src = gif.src; // Reset the GIF to play from the beginning
+        }
+      });
+    });
+  </script>
+</Layout>

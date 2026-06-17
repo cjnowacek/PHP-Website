@@ -1,0 +1,10 @@
+/* static/css/main.css - Master CSS file that imports all modules */
+
+@import 'variables.css';
+@import 'base.css';
+@import 'header.css';
+@import 'grid.css';
+@import 'forms.css';
+@import 'projects.css';
+@import 'pages.css';
+@import 'responsive.css';

@@ -1,0 +1,46 @@
+---
+// src/components/ProjectCard.astro — ported from includes/project-components/project_card.php
+const { project, showLink = true } = Astro.props;
+const hasGif = !!project.gif;
+const achievementsLabel = project.category === 'devops' ? 'Achievements' : 'Contributions';
+---
+<div class="project-card">
+  <div class="project-media">
+    {project.image ? (
+      <>
+        <img src={project.image} alt={project.title} loading="lazy" />
+        {hasGif && (
+          <img class="hover-gif" src={project.gif} alt={`${project.title} GIF`} loading="lazy" />
+        )}
+      </>
+    ) : (
+      <div class="project-media-overlay">
+        <div class="media-icon">🔄</div>
+      </div>
+    )}
+  </div>
+  <div class="project-info-card">
+    <h3>{project.title}</h3>
+    <p class="project-company">{project.company}</p>
+    <p class="project-description-card">{project.description}</p>
+
+    {project.highlights?.length > 0 && (
+      <div class="project-highlights">
+        <strong>Key {achievementsLabel}:</strong>
+        <ul>
+          {project.highlights.map((h) => <li>{h}</li>)}
+        </ul>
+      </div>
+    )}
+
+    {project.tech_tags?.length > 0 && (
+      <div class="tech-tags">
+        {project.tech_tags.map((tag) => <span class="tech-tag">{tag}</span>)}
+      </div>
+    )}
+
+    {showLink && project.link && (
+      <a href={project.link} class="project-link">View Project Details</a>
+    )}
+  </div>
+</div>

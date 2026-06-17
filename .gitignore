@@ -1,5 +1,12 @@
 # Ignore static/img
 /static/img/
+/public/static/img/
 
 # Contact form submissions (runtime data)
 /includes/contact_submissions.json
+
+# Astro / Node
+node_modules/
+dist/
+.astro/
+.DS_Store

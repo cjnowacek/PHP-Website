@@ -1,0 +1,166 @@
+/* static/css/responsive.css - All media queries and responsive styles */
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    /* Competency cards: 2 per row */
+    .grid.competencies-grid .grid-item {
+        flex: 1 1 calc(50% - var(--grid-gap));
+        max-width: calc(50% - var(--grid-gap));
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .grid .grid-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    .category-nav {
+        gap: 10px;
+    }
+    
+    .category-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .title__container nav {
+        gap: 20px;
+    }
+    
+    .title__container nav a {
+        font-size: 16px;
+    }
+    
+    .projects-container {
+        gap: 2rem;
+    }
+    
+    .project-media {
+        height: 250px;
+    }
+    
+    .project-info-card {
+        padding: 1.5rem;
+    }
+    
+    .projects-container-index {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+    
+    .two-column-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-overlay {
+        padding: 20px;
+    }
+    
+    .hero-overlay h1 {
+        font-size: 2em;
+    }
+    
+    .hero-subtitle {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Competency cards: 1 per row (stacked) */
+    .grid.competencies-grid .grid-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .competencies-grid .grid-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .competencies-grid .grid-item .project-info {
+        padding: 1.5rem;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+    
+    .tech-tags {
+        justify-content: center;
+    }
+    
+    .hero-media {
+        height: 250px;
+    }
+    
+    .metrics {
+        justify-content: center;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .timeline-marker {
+        margin: 0 auto 15px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .title__container h1 {
+        font-size: 3em;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    .about-content h3 {
+        font-size: 1.3em;
+    }
+    
+    .project-media {
+        height: 200px;
+    }
+    
+    .tech-tags {
+        justify-content: center;
+    }
+    
+    .hero-overlay {
+        padding: 15px;
+    }
+    
+    .hero-overlay h1 {
+        font-size: 1.5em;
+    }
+    
+    .project-info-card {
+        padding: 1rem;
+    }
+    
+    .achievement-card {
+        padding: 20px;
+    }
+    
+    .contact-details {
+        font-size: 14px;
+    }
+}

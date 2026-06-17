@@ -1,0 +1,47 @@
+---
+// src/layouts/Layout.astro — ported from includes/header.php + footer.php
+import { siteName, siteTitle, siteDescription, navItems } from '../config.js';
+
+const { title } = Astro.props;
+const pageTitle = title ? `${title} - ${siteName}` : siteTitle;
+
+// Active-nav highlighting based on the real request path.
+// (Fixes the PHP version, which compared clean-URL nav keys against .php values
+//  and so never actually matched.)
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+function isActive(href) {
+  if (href === '/') return path === '/';
+  return path === href || path.startsWith(href + '/');
+}
+
+const year = new Date().getFullYear();
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="CJ Nowacek" />
+    <meta name="description" content={siteDescription} />
+    <title>{pageTitle}</title>
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="title__container">
+      <nav>
+        {navItems.map(([href, label]) => (
+          <a href={href} class={isActive(href) ? 'active' : undefined}>{label}</a>
+        ))}
+      </nav>
+    </div>
+
+    <slot />
+
+    <hr />
+    <p class="subtext">&copy; {year} {siteName}. All rights reserved.</p>
+  </body>
+</html>
