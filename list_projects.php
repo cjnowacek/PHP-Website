@@ -1,7 +1,7 @@
 <?php
 $page_title = "Available Projects";
 include 'includes/header.php';
-include 'includes/projects/project_loader.php';
+include 'includes/project-components/project_loader.php';
 ?>
 
 <div class="container" style="max-width: 1300px;">
@@ -12,7 +12,7 @@ include 'includes/projects/project_loader.php';
     $allProjects = ProjectLoader::getAllProjects();
     foreach ($allProjects as $project) {
         echo "<div style='border: 1px solid #ccc; margin: 10px; padding: 10px; border-radius: 5px;'>";
-        echo "<strong>ID:</strong> " . $project['id'] . "'</code><br>";
+        echo "<strong>ID:</strong> <code>" . $project['id'] . "</code><br>";
         echo "<strong>Title:</strong> " . $project['title'] . "<br>";
         echo "<strong>Category:</strong> " . $project['category'] . "<br>";
         echo "</div>";

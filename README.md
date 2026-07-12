@@ -40,7 +40,6 @@ php-website/
 │   ├── img/               # Images (not in git)
 │   └── icons/             # Icon assets
 ├── .htaccess              # Apache URL rewriting
-├── sync-images.sh         # Image sync script (WSL)
 └── reinstall-apache2.sh   # Apache setup script
 ```
 
@@ -60,9 +59,11 @@ git clone <repository-url>
 cd php-website
 ```
 
-2. Sync images (WSL only):
+2. Sync images (script lives in the Dropbox assets folder, not this repo; runs in Git Bash, WSL, or Linux):
 ```bash
-./sync-images.sh
+# Auto-detects the repo at C:\dev\PHP-Website (Windows) or ~/PHP-Website (Linux/WSL);
+# pass the repo path explicitly if it lives elsewhere
+/c/Dropbox/1-career/web-assets/sync-with-static-img.sh [path-to-repo]
 ```
 Note: Images are stored separately in Dropbox and excluded from git.
 
@@ -91,16 +92,15 @@ Edit `includes/config.php` to update:
 - **Demo Reel:** Embedded Vimeo player
 - **Dual Resumes:** Separate PDFs for TechArt and DevOps roles
 
-## Image Management (WSL)
+## Image Management
 
-Images are stored in Windows Dropbox and synced via `sync-images.sh`:
+Images are stored in Windows Dropbox at `C:\Dropbox\1-career\web-assets\`. The `~sync\` subfolder holds the web-ready assets (`pages/`, `pfp/`, `project-cards/`); `src\` holds source art (PSDs, logo, gif frames) that never ships.
+
+Sync via the script in the Dropbox folder. It works in Git Bash on Windows, WSL, and native Linux, auto-detecting Dropbox and the repo (`C:\dev\PHP-Website` on Windows, `~/PHP-Website` on Linux); pass the repo path as an argument to override:
 
 ```bash
-# Sync images from Dropbox to repo
-./sync-images.sh
+/c/Dropbox/1-career/web-assets/sync-with-static-img.sh [path-to-repo]
 ```
-
-The script copies from `/mnt/c/Dropbox/1-professional/web-assets/~sync` to `static/img/`.
 
 ## URL Structure
 
