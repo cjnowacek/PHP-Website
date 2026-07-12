@@ -61,7 +61,7 @@ cd php-website
 
 2. Sync images (script lives in the Dropbox assets folder, not this repo; runs in Git Bash, WSL, or Linux):
 ```bash
-# Auto-detects the repo at C:\dev\PHP-Website (Windows) or ~/PHP-Website (Linux/WSL);
+# Auto-detects the repo at C:\dev\PHP-Website (Windows) or ~/dev/PHP-Website (Linux/WSL);
 # pass the repo path explicitly if it lives elsewhere
 /c/Dropbox/1-career/web-assets/sync-with-static-img.sh [path-to-repo]
 ```
@@ -96,7 +96,7 @@ Edit `includes/config.php` to update:
 
 Images are stored in Windows Dropbox at `C:\Dropbox\1-career\web-assets\`. The `~sync\` subfolder holds the web-ready assets (`pages/`, `pfp/`, `project-cards/`); `src\` holds source art (PSDs, logo, gif frames) that never ships.
 
-Sync via the script in the Dropbox folder. It works in Git Bash on Windows, WSL, and native Linux, auto-detecting Dropbox and the repo (`C:\dev\PHP-Website` on Windows, `~/PHP-Website` on Linux); pass the repo path as an argument to override:
+Sync via the script in the Dropbox folder. It works in Git Bash on Windows, WSL, and native Linux, auto-detecting Dropbox and the repo (`C:\dev\PHP-Website` on Windows, `~/dev/PHP-Website` on Linux); pass the repo path as an argument to override:
 
 ```bash
 /c/Dropbox/1-career/web-assets/sync-with-static-img.sh [path-to-repo]
@@ -129,13 +129,13 @@ Form submissions are handled by `includes/contact_handler.php` and logged to `co
 Deploy to SiteGround hosting:
 
 ```bash
-rsync -avzP --delete --exclude='.git/' --exclude='/home/cnowacek/git/php-website/reinstall-apache2.sh' /home/cnowacek/git/php-website/ siteground:www/cjnowacek.com/public_html/
+rsync -avzP --delete --exclude='.git/' --exclude='reinstall-apache2.sh' ./ siteground:www/cjnowacek.com/public_html/
 ```
 
 If the images don't sync, excluding .kra usually works
 
 ```bash
-rsync -avzP --exclude='*.kra' --exclude='*~' /home/cnowacek/git/php-website/static/img/ siteground:www/cjnowacek.com/public_html/static/img/
+rsync -avzP --exclude='*.kra' --exclude='*~' static/img/ siteground:www/cjnowacek.com/public_html/static/img/
 ```
 
 This syncs the entire site to the production server, excluding git files and the local Apache setup script.

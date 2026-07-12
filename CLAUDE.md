@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Clone Location
+
+Clone to `C:\dev\PHP-Website` on Windows, `~/dev/PHP-Website` on Linux.
+
 ## What This Is
 
 CJ Nowacek's portfolio website (cjnowacek.com): procedural PHP, no framework, no build step, no tests. Two portfolio tracks mirror his dual resume: Technical Art (`techart.php`) and DevOps (`devops.php`). Hosted on SiteGround, served by Apache with mod_rewrite.
@@ -28,7 +32,7 @@ rsync -avzP --exclude='*.kra' --exclude='*~' static/img/ siteground:www/cjnowace
 Images live in Dropbox, not git; `static/img/` is gitignored. The sync source is `C:\Dropbox\1-career\web-assets\~sync\` (subfolders `pages/`, `pfp/`, `project-cards/` map 1:1 into `static/img/`). The sync script lives in that Dropbox folder, not this repo, and is cross-platform (Git Bash, WSL, native Linux):
 
 ```bash
-# Auto-detects the repo (C:\dev\PHP-Website on Windows, ~/PHP-Website on Linux);
+# Auto-detects the repo (C:\dev\PHP-Website on Windows, ~/dev/PHP-Website on Linux);
 # pass the repo path to override
 /c/Dropbox/1-career/web-assets/sync-with-static-img.sh [path-to-repo]
 ```
