@@ -26,32 +26,29 @@ foreach ($featuredProjectIds as $projectId) {
 
     <h2>Pipeline Developer &amp; Technical Artist</h2>
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
-        <p>I build the tools and infrastructure behind CG production: Python and PyQt desktop tooling, render farm automation, and artist-facing workflows in 3ds Max and Unreal. I come at pipeline from the artist's side of the desk, with a background in character rigging and a ship credit on SMITE 2, so the systems I build fit how artists actually think and work.</p>
+        <p>I build production pipelines for CG studios: desktop tools in Python and PyQt, render farm automation, and the deployment systems that keep a studio's tooling consistent across every machine. My background is character rigging, with a ship credit on SMITE 2 as a technical animator. That artist's-side experience is the point: the systems I build fit how artists actually work, because I have been the artist they were built for.</p>
     </div>
 
-<h2>Core Competencies</h2>
+<h2>What I Build</h2>
     <div class="grid competencies-grid">
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Pipeline &amp; Tools</h3>
-                <p class="project-description">Python, PyQt, and MaxScript tooling for DCC pipelines, rigging, and artist workflows</p>
-                <a href="techart.php" class="competency-link">View Tech Art</a>
+                <h3><i class="fa-solid fa-toolbox" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Production Tools</h3>
+                <p class="project-description">Python/PyQt and MaxScript applications for scene diagnostics, preparation, render submission, and artist workflows</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-solid fa-code" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Automation &amp; Infrastructure</h3>
-                <p class="project-description">Render farm automation, deployment scripting, and batch processing for production at scale</p>
-                <a href="devops.php" class="competency-link">View Pipeline</a>
+                <h3><i class="fa-solid fa-server" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Pipeline Infrastructure</h3>
+                <p class="project-description">Render-farm automation, software deployment, batch processing, and CI/CD for production tooling</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-brands fa-github" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>GitHub</h3>
-                <p class="project-description">Code for these projects and more</p>
-                <a href="https://github.com/cjnowacek" target="_blank" class="competency-link">Go to GitHub</a>
+                <h3><i class="fa-solid fa-diagram-project" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Cross-DCC Workflows</h3>
+                <p class="project-description">Tools and systems connecting 3ds Max, Maya, Unreal, and render-management platforms across production</p>
             </div>
         </div>
     </div>

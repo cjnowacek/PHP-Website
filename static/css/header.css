@@ -33,7 +33,7 @@
 .title__container nav a {
     color: var(--subheader-color);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-family: Cambria, Georgia, serif;
     text-transform: uppercase;
     transition: color 0.3s ease;
