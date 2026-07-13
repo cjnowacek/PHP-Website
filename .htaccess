@@ -6,7 +6,10 @@ RewriteBase /
 
 # --- Option 1: clean /pages-techart/runaway/ URLs ---
 
-# 1) Redirect .../index.php → .../
+# 1) Redirect .../index.php → .../ (only when the client actually requested
+#    index.php; without the THE_REQUEST guard this also fires on Apache's
+#    internal DirectoryIndex subrequest and breaks "/" with a 403)
+RewriteCond %{THE_REQUEST} \s/+([^?\s]*/)?index\.php[\s?]
 RewriteRule ^(.*/)?index\.php$ /$1 [R=301,L]
 
 # 2) Don’t rewrite real files or directories
