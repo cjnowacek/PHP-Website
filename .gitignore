@@ -1,2 +1,5 @@
-# Ignore static/img
-/static/img/
+# Ignore static/img, except the small hover-preview videos
+/static/img/*
+!/static/img/project-cards/
+/static/img/project-cards/*
+!/static/img/project-cards/video/

@@ -2,17 +2,24 @@
 <?php
 // includes/project-cards/project_card.php - Reusable project card component
 function renderProjectCard($project, $showLink = true) {
+    $hasVideo = !empty($project['video']);
     $hasGif = !empty($project['gif']);
+    $cardHref = ($showLink && !empty($project['link'])) ? $project['link'] : null;
     ?>
-    <div class="project-card">
+    <div class="project-card"<?php if ($cardHref): ?> data-href="<?php echo htmlspecialchars($cardHref); ?>"<?php endif; ?>>
         <div class="project-media">
             <?php if (!empty($project['image'])): ?>
-                <img src="<?php echo htmlspecialchars($project['image']); ?>" 
+                <img src="<?php echo htmlspecialchars($project['image']); ?>"
                      alt="<?php echo htmlspecialchars($project['title']); ?>"
                      loading="lazy">
-                <?php if ($hasGif): ?>
-                    <img class="hover-gif" 
-                         src="<?php echo htmlspecialchars($project['gif']); ?>" 
+                <?php if ($hasVideo): ?>
+                    <video class="hover-video"
+                           src="<?php echo htmlspecialchars($project['video']); ?>"
+                           muted loop playsinline preload="metadata"
+                           aria-label="<?php echo htmlspecialchars($project['title']); ?> preview"></video>
+                <?php elseif ($hasGif): ?>
+                    <img class="hover-gif"
+                         src="<?php echo htmlspecialchars($project['gif']); ?>"
                          alt="<?php echo htmlspecialchars($project['title']); ?> GIF"
                          loading="lazy">
                 <?php endif; ?>

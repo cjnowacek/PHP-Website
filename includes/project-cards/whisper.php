@@ -9,6 +9,7 @@ return [
     'order' => 4,
     'image' => 'static/img/project-cards/whispers-webp-1200x900.webp',
     'gif' => 'static/img/project-cards/whispers-gif-1200x900.gif',
+    'video' => 'static/img/project-cards/video/whispers_1200x900.mp4',
     'description' => 'Technical artist for an indie space exploration game, focusing on automation pipeline development and CLI-based rigging workflows. Created comprehensive scripts for asset processing and animation export systems.',
     'highlights' => [
         'Developed CLI-based rigging automation scripts',

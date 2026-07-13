@@ -1,0 +1,41 @@
+name: Deploy to SiteGround
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Check secrets
+        run: |
+          if [ -z "${{ secrets.SG_HOST }}" ] || [ -z "${{ secrets.SG_USER }}" ] || [ -z "${{ secrets.SG_SSH_KEY }}" ]; then
+            echo "::error::Missing SG_HOST / SG_USER / SG_SSH_KEY repo secrets. Add them under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SG_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.SG_PORT || '18765' }}" "${{ secrets.SG_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy site (code only; images stay on the server)
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SG_PORT || '18765' }}" \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --include='/static/img/' \
+            --include='/static/img/project-cards/' \
+            --include='/static/img/project-cards/video/***' \
+            --exclude='/static/img/**' \
+            --exclude='contact_submissions.json' \
+            --exclude='reinstall-apache2.sh' \
+            --exclude='CLAUDE.md' \
+            ./ "${{ secrets.SG_USER }}@${{ secrets.SG_HOST }}:www/cjnowacek.com/public_html/"

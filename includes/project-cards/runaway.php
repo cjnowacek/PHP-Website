@@ -10,6 +10,7 @@ return [
     'order' => 3,
     'image' => 'static/img/project-cards/runaway-webp-1200x900.webp',
     'gif' => 'static/img/project-cards/runaway-gif-1200x900.gif',
+    'video' => 'static/img/project-cards/video/runaway_1200x900.mp4',
     'description' => 'Final BFA school project. Story rich adventure focusing on childhood trauma and facing your past.',
     'highlights' => [
         'Character rigging and animation',
