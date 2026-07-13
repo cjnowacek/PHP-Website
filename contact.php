@@ -11,7 +11,7 @@ include 'includes/header.php';
             <h3>Let's Connect</h3>
             <div class="contact-details">
                 <p><strong>📧 Email:</strong><br>
-                <a href="mailto:cjnowacek@protonmail.com">cjnowacek@protonmail.com</a></p>
+                <a href="mailto:cj@cjnowacek.com">cj@cjnowacek.com</a></p>
                 
                 <p><strong>💼 LinkedIn:</strong><br>
                 <a href="https://linkedin.com/in/cj-nowacek" target="_blank" rel="noopener">linkedin.com/in/cj-nowacek</a></p>
@@ -25,20 +25,23 @@ include 'includes/header.php';
             
             <div class="resume-download">
                 <h3>Resume</h3>
-                <a href="static/files/CJ_Nowacek_Resume.pdf" class="project-link" download>
-                    📄 Download Resume (PDF)
+                <a href="/static/files/CJ-Nowacek-TechArt-Resume.pdf" class="project-link" download>
+                    📄 Tech Art Resume (PDF)
                 </a>
-                <p class="project-description">Technical Artist & DevOps Engineer<br>
-                Updated: January 2025</p>
+                <a href="/static/files/CJ-Nowacek-Pipeline-Resume.pdf" class="project-link" download>
+                    📄 Pipeline Resume (PDF)
+                </a>
+                <p class="project-description">Pipeline Developer &amp; Technical Artist<br>
+                Updated: <?php echo date('F Y', @filemtime(__DIR__ . '/static/files/CJ-Nowacek-Pipeline-Resume.pdf') ?: time()); ?></p>
             </div>
-            
+
             <div class="availability">
                 <h3>Availability</h3>
                 <div class="status-indicator">
                     <span class="status-dot available"></span>
-                    <span>Open to new opportunities</span>
+                    <span>Open to conversations</span>
                 </div>
-                <p class="project-description">Currently seeking Technical Artist or DevOps Engineer positions. Open to contract, freelance, or full-time opportunities.</p>
+                <p class="project-description">Happy to talk pipeline tooling, rigging, and render farm automation. Freelance rigging inquiries welcome.</p>
             </div>
         </div>
         
@@ -77,13 +80,12 @@ include 'includes/header.php';
                     <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project, opportunity, or question..."></textarea>
                 </div>
                 
-                <div class="form-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                        Keep me updated on your latest projects and articles
-                    </label>
+                <!-- Honeypot: hidden from humans, catches bots -->
+                <div style="position: absolute; left: -9999px;" aria-hidden="true">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                 </div>
-                
+
                 <button type="submit" class="submit-btn">Send Message</button>
                 
                 <p class="form-note">* Required fields. I typically respond within 24-48 hours.</p>
@@ -95,30 +97,39 @@ include 'includes/header.php';
 </div>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    
-    const formData = new FormData(this);
-    const submitBtn = this.querySelector('.submit-btn');
+
+    const form = this;
+    const submitBtn = form.querySelector('.submit-btn');
     const responseDiv = document.getElementById('formResponse');
-    
-    // Show loading state
+
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual endpoint)
-    setTimeout(() => {
-        responseDiv.innerHTML = '<div class="success-message">Thank you for your message! I\'ll get back to you soon.</div>';
-        responseDiv.style.display = 'block';
-        this.reset();
-        submitBtn.textContent = 'Send Message';
-        submitBtn.disabled = false;
-        
-        // Hide response after 5 seconds
-        setTimeout(() => {
-            responseDiv.style.display = 'none';
-        }, 5000);
-    }, 1000);
+
+    try {
+        const res = await fetch('/includes/contact_handler.php', {
+            method: 'POST',
+            body: new FormData(form)
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+            responseDiv.innerHTML = '<div class="success-message">' + data.message + '</div>';
+            form.reset();
+        } else {
+            const details = (data.details || [data.error || 'Something went wrong.']).join(' ');
+            responseDiv.innerHTML = '<div class="error-message">' + details + '</div>';
+        }
+    } catch (err) {
+        responseDiv.innerHTML = '<div class="error-message">Could not send right now. Email me directly at cj@cjnowacek.com.</div>';
+    }
+
+    responseDiv.style.display = 'block';
+    submitBtn.textContent = 'Send Message';
+    submitBtn.disabled = false;
+
+    setTimeout(() => { responseDiv.style.display = 'none'; }, 8000);
 });
 </script>
 

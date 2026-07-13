@@ -29,6 +29,6 @@ $social_links = [
     'linkedin' => 'https://linkedin.com/in/cj-nowacek',
     'github' => 'https://github.com/cjnowacek',
     'vimeo' => 'https://vimeo.com/1016947852',
-    'email' => 'mailto:cjnowacek@protonmail.com'
+    'email' => 'mailto:cj@cjnowacek.com'
 ];
 ?>

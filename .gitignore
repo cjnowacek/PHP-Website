@@ -1,3 +1,6 @@
+# Contact form submissions (server-side data, never commit)
+includes/contact_submissions.json
+
 # Ignore static/img, except the small hover-preview videos and card placeholders
 /static/img/*
 !/static/img/project-cards/
