@@ -60,10 +60,13 @@ Projects are data, not markup:
 
 `contact.php` posts to `includes/contact_handler.php`, which validates and appends to `contact_submissions.json` (gitignored). The Contact nav item is currently commented out in `config.php`.
 
+## TODO
+
+- **Migrate to Astro.** Planned rewrite of this site: PHP includes become Astro components, output is fully static, deployed via GitHub Actions to free static hosting (GitHub Pages or Cloudflare) instead of SiteGround. The contact form moves to a form service (e.g. Formspree) since there will be no server-side PHP. Astro's asset pipeline also replaces the oversized hover gifs with optimized media. Treat the migration as a scoped standalone project; until then, all work stays on the current PHP stack.
+
 ## Gotchas
 
-- `list_projects.php` (dev helper that lists all project ids) includes `includes/projects/project_loader.php`; that path is stale — the loader lives in `includes/project-components/`. Fix the include before relying on it.
-- `static/files/` holds the two resume PDFs. They are built by the `Resume-with-Tex` repo's GitHub Actions workflow ("Build Resumes" artifact); replace these copies when the resume changes rather than editing them here.
+- `static/files/` holds the two resume PDFs. Do not edit them here: the `Resume-with-Tex` repo's CI builds them and pushes fresh copies into this repo automatically on resume changes (commits authored by `resume-ci`).
 - Site copy style: no em dashes anywhere in user-facing text; use colons, commas, or parentheses. Keep employer work described IP-safe: no internal tool codenames, node counts, vendor names, or client names from MediaLab work.
 
 ## Full Tree
@@ -79,7 +82,7 @@ PHP-Website/
 ├── contact.php
 ├── devops.php                 DevOps portfolio page (id list: $devopsProjectIds)
 ├── index.php                  Homepage (id list: $featuredProjectIds)
-├── list_projects.php          Dev helper: lists all project ids (has stale include path)
+├── list_projects.php          Dev helper: lists all project ids
 ├── reinstall-apache2.sh       Local Apache setup (WSL/Linux)
 ├── techart.php                TechArt portfolio page (id list: $techartProjectIds)
 ├── includes/

@@ -1,10 +1,11 @@
 <?php
-$page_title = "DevOps";
+$page_title = "Pipeline & Infrastructure";
 include 'includes/header.php';
 include 'includes/project-components/project_loader.php';
 include 'includes/project-components/project_card.php';
 
 $devopsProjectIds = [
+  'ml3ds',
 #  'bash-tools',
 #  'php-website'
 ];
@@ -19,33 +20,13 @@ foreach ($devopsProjectIds as $projectId) {
 }
 ?>
 
-<style>
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-@media (max-width: 900px) {
-    .projects-container {
-        grid-template-columns: 1fr 1fr;
-        min-width: auto;
-    }
-}
-@media (max-width: 600px) {
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
-
 <div class="container" style="max-width: 1300px;">
-    <h2>DevOps & Infrastructure</h2>
+    <h2>Pipeline & Infrastructure</h2>
     
     <hr>
 
     <div style="text-align: center; margin: 40px 0;">
-        <a href="/static/files/CJ-Nowacek-IT-Resume.pdf" class="resume-download-btn" target="_blank" rel="noopener">Download DevOps Resume (PDF)</a>
+        <a href="/static/files/CJ-Nowacek-Pipeline-Resume.pdf" class="resume-download-btn" target="_blank" rel="noopener">Download Pipeline Resume (PDF)</a>
     </div>   
 
     <h2>Core Competencies</h2>
@@ -69,7 +50,7 @@ foreach ($devopsProjectIds as $projectId) {
 
     <h2>Featured Projects</h2>
 
-    <div class="projects-container">
+    <div class="projects-container project-rows">
         <?php foreach ($devopsProjects as $project): ?>
             <?php renderProjectCard($project); ?>
         <?php endforeach; ?>

@@ -50,7 +50,7 @@ foreach ($techartProjectIds as $projectId) {
     <h2>Smite</h2>
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
         <p><strong>Hi-Rez Studios | 2023-2024 | Unreal Engine 5 & 3ds Max</strong></p>
-        <p>Technical Artist for Hi-Rez Studios’ popular MOBA game, focusing on character skinning/rigging and tool development. Working on a live-service game with millions of players required robust, scalable solutions that could handle frequent content updates while maintaining high-quality standards..</p>
+        <p>Technical Artist for Hi-Rez Studios’ popular MOBA game, focusing on character skinning/rigging and tool development. Working on a live-service game with millions of players required robust, scalable solutions that could handle frequent content updates while maintaining high-quality standards.</p>
         
         <p>My primary focus was streamlining the character production workflow, particularly the transition from the original Smite to its sequel. This involved creating automated tools for rig building, optimizing character porting processes, and ensuring consistency across a large library of character assets.</p>
     </div>

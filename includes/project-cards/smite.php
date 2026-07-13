@@ -9,12 +9,13 @@ return [
     'order' => 1,
     'image' => 'static/img/project-cards/smite-webp-1200x900.webp',
     'gif' => 'static/img/project-cards/smite-gif-1200x900.gif',
-    'description' => 'Technical artist to the popular MOBA game. Focused on creating optimizing charater rigging pipelines, and developing tools to streamline the art production workflow.',
+    'video' => 'static/img/project-cards/video/smite_1200x900.mp4',
+    'description' => 'Technical artist on the popular MOBA. Focused on creating and optimizing character rigging pipelines, and developing tools to streamline the art production workflow.',
     'highlights' => [
-      'Created automatic build tools for building rig moduals',
-      'Reduced character port time from smite to its sequal by 25%'
+      'Created automated build tools for rig modules',
+      'Reduced character port time from SMITE to its sequel by 25%'
     ],
-    'tech_tags' => ['Unreal Engine 5', '3D Studio Max','Macscript' , 'Python', ],
+    'tech_tags' => ['Unreal Engine 5', '3ds Max', 'MaxScript', 'Python'],
     'link' => 'pages-techart/smite/index.php',
     'meta' => [
         'duration' => '18 months',

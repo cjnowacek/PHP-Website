@@ -3,7 +3,7 @@
 body {
     background-color: var(--bg-color);
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-color);
 }
 
@@ -116,7 +116,7 @@ h2 {
 p.subtext {
     text-align: center;
     color: var(--subheader-color);
-    font-family: Portico_Regular, sans-serif;
+    font-family: Cambria, Georgia, serif;
     line-height: 10px;
     margin: 40px 0 60px 0;
 }

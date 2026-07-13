@@ -22,41 +22,21 @@ foreach ($techartProjectIds as $projectId) {
 }
 ?>
 
-<style>
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-@media (max-width: 900px) {
-    .projects-container {
-        grid-template-columns: 1fr 1fr;
-        min-width: auto;
-    }
-}
-@media (max-width: 600px) {
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
-
 <div class="container" style="max-width: 1300px;">
  
-    <h2>Techart</h2>
+    <h2>Technical Art</h2>
 
     <hr>
 
     <div style="text-align: center; margin: 40px 0;">
-        <a href="/static/files/CJ-Nowacek-TechArt-Resume.pdf" class="resume-download-btn" target="_blank" rel="noopener">Download Techart Resume (PDF)</a>
+        <a href="/static/files/CJ-Nowacek-TechArt-Resume.pdf" class="resume-download-btn" target="_blank" rel="noopener">Download Tech Art Resume (PDF)</a>
     </div>   
 
    <?php include 'includes/demo_reel.php'; ?>
 
     <h2>Featured Projects</h2>
 
-    <div class="projects-container">
+    <div class="projects-container project-rows">
         <?php foreach ($techartProjects as $project): ?>
             <?php renderProjectCard($project); ?>
         <?php endforeach; ?>

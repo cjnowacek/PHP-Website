@@ -54,7 +54,7 @@ include '../../../includes/header.php';
     <h2>Tool Demo</h2>
     <div class="demo-reel">
         <div class="video-container">
-            <iframe title="Evelope exporter"
+            <iframe title="Envelope exporter"
                     src="https://www.youtube.com/embed/clCQRT6Jh8g"
                     frameborder="0"
                     allowfullscreen
