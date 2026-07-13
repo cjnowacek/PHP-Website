@@ -11,7 +11,7 @@ $nav_items = [
     '/devops' => 'Pipeline',
     '/devlog' => 'Dev Log',
     '/about' => 'About',
-//    '/contact.php' => 'Contact'
+    '/contact' => 'Contact'
 ];
 
 // Get current page for active nav highlighting

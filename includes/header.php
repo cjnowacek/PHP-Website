@@ -23,6 +23,8 @@ if ($request_path === '' || $request_path === '/index') {
     $active_nav = '/devlog';
 } elseif ($request_path === '/about') {
     $active_nav = '/about';
+} elseif ($request_path === '/contact') {
+    $active_nav = '/contact';
 } else {
     $active_nav = null; // not a main page: highlight nothing
 }
