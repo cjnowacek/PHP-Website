@@ -1,5 +1,5 @@
 <?php
-$page_title = "Bash Automation Tools - DevOps";
+$page_title = "Bash Automation Tools - Pipeline";
 include '../../includes/header.php';
 ?>
 
@@ -7,7 +7,7 @@ include '../../includes/header.php';
     <!-- Breadcrumb Navigation -->
     <nav style="margin: 20px 0; color: var(--text-secondary); font-size: 14px;">
         <a href="../../index.php" style="color: var(--header-color); text-decoration: none;">Home</a> > 
-        <a href="../../devops.php" style="color: var(--header-color); text-decoration: none;">DevOps</a> > 
+        <a href="../../devops.php" style="color: var(--header-color); text-decoration: none;">Pipeline</a> > 
         <span>Bash Tools</span>
     </nav>
 
@@ -385,7 +385,7 @@ echo "▶️  Running: $selected"
 
     <!-- Navigation -->
     <div style="display: flex; justify-content: space-between; margin: 60px 0 40px 0; gap: 20px;">
-        <a href="../../devops.php" class="project-link" style="background: var(--form-bg); color: var(--text-color);">← Back to DevOps</a>
+        <a href="../../devops.php" class="project-link" style="background: var(--form-bg); color: var(--text-color);">← Back to Pipeline</a>
         <a href="../build-pipeline/" class="project-link">Next Project: Build Pipeline →</a>
     </div>
 </div>

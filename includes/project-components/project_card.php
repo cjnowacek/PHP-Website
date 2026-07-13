@@ -1,25 +1,31 @@
 
 <?php
 // includes/project-cards/project_card.php - Reusable project card component
+// Card data may use root-relative paths without a leading slash; normalize so
+// cards render correctly from any directory depth
+function projectCardUrl($path) {
+    return preg_match('#^(https?:)?/#', $path) ? $path : '/' . $path;
+}
+
 function renderProjectCard($project, $showLink = true) {
     $hasVideo = !empty($project['video']);
     $hasGif = !empty($project['gif']);
-    $cardHref = ($showLink && !empty($project['link'])) ? $project['link'] : null;
+    $cardHref = ($showLink && !empty($project['link'])) ? projectCardUrl($project['link']) : null;
     ?>
     <div class="project-card"<?php if ($cardHref): ?> data-href="<?php echo htmlspecialchars($cardHref); ?>"<?php endif; ?>>
         <div class="project-media">
             <?php if (!empty($project['image'])): ?>
-                <img src="<?php echo htmlspecialchars($project['image']); ?>"
+                <img src="<?php echo htmlspecialchars(projectCardUrl($project['image'])); ?>"
                      alt="<?php echo htmlspecialchars($project['title']); ?>"
                      loading="lazy">
                 <?php if ($hasVideo): ?>
                     <video class="hover-video"
-                           src="<?php echo htmlspecialchars($project['video']); ?>"
+                           src="<?php echo htmlspecialchars(projectCardUrl($project['video'])); ?>"
                            muted loop playsinline preload="metadata"
                            aria-label="<?php echo htmlspecialchars($project['title']); ?> preview"></video>
                 <?php elseif ($hasGif): ?>
                     <img class="hover-gif"
-                         src="<?php echo htmlspecialchars($project['gif']); ?>"
+                         src="<?php echo htmlspecialchars(projectCardUrl($project['gif'])); ?>"
                          alt="<?php echo htmlspecialchars($project['title']); ?> GIF"
                          loading="lazy">
                 <?php endif; ?>
@@ -53,8 +59,8 @@ function renderProjectCard($project, $showLink = true) {
                 </div>
             <?php endif; ?>
             
-            <?php if ($showLink && !empty($project['link'])): ?>
-                <a href="<?php echo htmlspecialchars($project['link']); ?>" class="project-link">View Project Details</a>
+            <?php if ($cardHref): ?>
+                <a href="<?php echo htmlspecialchars($cardHref); ?>" class="project-link">View Project Details</a>
             <?php endif; ?>
         </div>
     </div>

@@ -8,7 +8,8 @@ return [
     'featured' => false,
     'order' => 101,
     'image' => '/static/img/project-cards/gravitySwitch-webp-1200x900.webp',
-    'gif' => '/static/img/project-cards/gravitySwitch-webp-1200x900.gif',
+    'gif' => '',
+    'video' => '/static/img/project-cards/video/gravitySwitch_1200x900.mp4',
     'description' => 'Gravity simulation rigging system using orient and aim constraints. Enables dynamic directional gravity effects for character animation in Smite.',
     'highlights' => [
         'Dynamic gravity direction simulation using constraints',
