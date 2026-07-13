@@ -1,6 +1,14 @@
 # Serve index.php automatically in directories
 DirectoryIndex index.php
 
+# Custom error page
+ErrorDocument 404 /404.php
+
+# Contact form submissions must never be web-readable
+<Files "contact_submissions.json">
+    Require all denied
+</Files>
+
 RewriteEngine On
 RewriteBase /
 
