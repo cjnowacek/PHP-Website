@@ -34,6 +34,7 @@ jobs:
             --include='/static/img/' \
             --include='/static/img/project-cards/' \
             --include='/static/img/project-cards/video/***' \
+            --include='/static/img/project-cards/ml3ds-webp-1200x900.webp' \
             --exclude='/static/img/**' \
             --exclude='contact_submissions.json' \
             --exclude='reinstall-apache2.sh' \

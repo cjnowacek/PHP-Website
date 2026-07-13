@@ -7,7 +7,7 @@ return [
     'category' => 'devops',
     'featured' => true,
     'order' => 0,
-    'image' => '',
+    'image' => 'static/img/project-cards/ml3ds-webp-1200x900.webp',
     'gif' => '',
     'description' => 'Pipeline tools and infrastructure for an architectural visualization studio: scene automation, render farm deployment, and artist-facing tooling for 3ds Max production at scale.',
     'highlights' => [

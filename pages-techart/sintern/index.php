@@ -1,18 +1,15 @@
 <?php
 $page_title = "The Sintern - Technical Art";
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/components/breadcrumb.php';
-
-// Define breadcrumb navigation
-$breadcrumbs = [
-    ['title' => 'Home', 'url' => '/index.php'],
-    ['title' => 'Technical Art', 'url' => '/techart.php'],
-    ['title' => 'The Sintern', 'url' => ''] // Current page, no URL
-];
+include '../../includes/header.php';
 ?>
 
 <div class="container">
-    <?php renderBreadcrumb($breadcrumbs); ?>
+    <!-- Breadcrumb Navigation -->
+    <nav style="margin: 20px 0; color: var(--text-secondary); font-size: 14px;">
+        <a href="../../index.php" style="color: var(--header-color); text-decoration: none;">Home</a> >
+        <a href="../../techart.php" style="color: var(--header-color); text-decoration: none;">Technical Art</a> >
+        <span>The Sintern</span>
+    </nav>
 
     <h2>The Sintern</h2>
     <div class="text-content">
@@ -202,9 +199,9 @@ $breadcrumbs = [
 
     <!-- Navigation -->
     <div style="display: flex; justify-content: space-between; margin: 60px 0 40px 0; gap: 20px;">
-        <a href="/techart.php" class="project-link" style="background: var(--form-bg); color: var(--text-color);">← Back to Technical Art</a>
-        <a href="/pages-techart/smite/" class="project-link">Next Project: Smite →</a>
+        <a href="../../techart.php" class="project-link" style="background: var(--form-bg); color: var(--text-color);">← Back to Technical Art</a>
+        <a href="../smite/" class="project-link">Next Project: Smite →</a>
     </div>
 </div>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>
