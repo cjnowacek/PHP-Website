@@ -42,7 +42,7 @@ include '../../includes/header.php';
 
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-brands fa-github" style="color:#1e3050; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Github Snapshot</h3>
+                <h3><i class="fa-brands fa-github" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Github Snapshot</h3>
                 <p class="project-description">Here's a snapshot of the tools I created during production.</p>
                 <a href="https://github.com/cjnowacek/maya-tools-lab/tree/89f7c5b4d28bb9b6fccbc0d72c9d9a6b53beae93" target="_blank" class="competency-link">Goto Github</a>
             </div>
@@ -206,21 +206,21 @@ include '../../includes/header.php';
     <div class="grid competencies-grid">
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-solid fa-clock" style="color:red; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Time Constraints</h3>
+                <h3><i class="fa-solid fa-clock" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Time Constraints</h3>
                 <p class="project-description">Academic deadlines required efficient planning and prioritization. Focused on core features first, then polish as much as possible.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-solid fa-bullseye" style="color:green; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Scope Management</h3>
+                <h3><i class="fa-solid fa-bullseye" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Scope Management</h3>
                 <p class="project-description">Balanced ambitious narrative goals with technical constraints. Developed modular systems for flexible content creation.</p>
             </div>
         </div>
 
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-solid fa-screwdriver-wrench" style="color:grey; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Tool Development</h3>
+                <h3><i class="fa-solid fa-screwdriver-wrench" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Tool Development</h3>
                 <p class="project-description">Built custom tools for my workflow while learning new technologies.</p>
             </div>
         </div>

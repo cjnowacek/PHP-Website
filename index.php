@@ -33,7 +33,7 @@ foreach ($featuredProjectIds as $projectId) {
     <div class="grid competencies-grid">
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-solid fa-wand-magic-sparkles" style="color:#1e3050; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Pipeline &amp; Tools</h3>
+                <h3><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Pipeline &amp; Tools</h3>
                 <p class="project-description">Python, PyQt, and MaxScript tooling for DCC pipelines, rigging, and artist workflows</p>
                 <a href="techart.php" class="competency-link">View Tech Art</a>
             </div>
@@ -41,7 +41,7 @@ foreach ($featuredProjectIds as $projectId) {
 
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-solid fa-code" style="color:blue; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Automation &amp; Infrastructure</h3>
+                <h3><i class="fa-solid fa-code" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>Automation &amp; Infrastructure</h3>
                 <p class="project-description">Render farm automation, deployment scripting, and batch processing for production at scale</p>
                 <a href="devops.php" class="competency-link">View Pipeline</a>
             </div>
@@ -49,7 +49,7 @@ foreach ($featuredProjectIds as $projectId) {
 
         <div class="grid-item">
             <div class="project-info">
-                <h3><i class="fa-brands fa-github" style="color:#1e3050; vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>GitHub</h3>
+                <h3><i class="fa-brands fa-github" style="color: var(--header-color); vertical-align: middle; margin-right: 4px; font-size:1.1em;"></i>GitHub</h3>
                 <p class="project-description">Code for these projects and more</p>
                 <a href="https://github.com/cjnowacek" target="_blank" class="competency-link">Go to GitHub</a>
             </div>
