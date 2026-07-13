@@ -1,5 +1,9 @@
 <?php
 // includes/header.php
+// HTML must never be served stale (SiteGround's dynamic cache kept serving
+// pre-deploy pages); assets stay cacheable via their ?v= versioned URLs
+header('Cache-Control: no-cache, must-revalidate');
+
 include_once 'config.php';
 
 // Get page-specific title if provided
