@@ -32,7 +32,14 @@ if ($request_path === '' || $request_path === '/index') {
     <meta name="author" content="<?php echo htmlspecialchars($site_author); ?>" />
     <meta name="description" content="<?php echo htmlspecialchars($site_description); ?>" />
     <title><?php echo htmlspecialchars($page_title); ?></title>
-    <link rel="stylesheet" href="/static/css/main.css" />
+    <?php
+    // Link each stylesheet with an mtime version so CSS changes bust browser caches
+    foreach (['variables', 'base', 'header', 'grid', 'forms', 'projects', 'pages', 'responsive'] as $sheet) {
+        $sheet_file = __DIR__ . '/../static/css/' . $sheet . '.css';
+        $v = @filemtime($sheet_file) ?: 1;
+        echo '    <link rel="stylesheet" href="/static/css/' . $sheet . '.css?v=' . $v . '" />' . "\n";
+    }
+    ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
