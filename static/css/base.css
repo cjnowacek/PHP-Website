@@ -113,12 +113,19 @@ h2 {
 }
 
 /* Footer and subtext */
+.site-footer {
+    background: var(--nav-bg);
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    margin-top: 60px;
+}
+
 p.subtext {
     text-align: center;
     color: var(--subheader-color);
     font-family: Cambria, Georgia, serif;
     line-height: 10px;
-    margin: 40px 0 60px 0;
+    margin: 10px 0;
 }
 
 footer {

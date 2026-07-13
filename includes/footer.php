@@ -1,8 +1,9 @@
 <?php
 // includes/footer.php
 ?>
-    <hr>
-    <p class="subtext">&copy; <?php echo $current_year; ?> <?php echo htmlspecialchars($site_name); ?>. All rights reserved.</p>
+    <div class="site-footer">
+        <p class="subtext">&copy; <?php echo $current_year; ?> <?php echo htmlspecialchars($site_name); ?>. All rights reserved.</p>
+    </div>
 
     <script>
         // Play hover-preview videos on card hover; pause and rewind on leave
