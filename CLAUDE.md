@@ -15,9 +15,12 @@ CJ Nowacek's portfolio website (cjnowacek.com): procedural PHP, no framework, no
 There is no build, lint, or test step. PHP files are served directly.
 
 ```bash
-# Local dev (WSL/Linux): configure Apache to serve this directory
+# Local preview (Windows or anywhere with PHP): http://localhost:8090
+./dev-server.bat            # or: php -S 127.0.0.1:8090 -t . dev-router.php
+# dev-router.php emulates the .htaccess clean URLs for `php -S`
+
+# Local dev (WSL/Linux alternative): real Apache serving this directory
 ./reinstall-apache2.sh
-# then browse http://localhost
 
 # Quick syntax check on a changed file
 php -l index.php

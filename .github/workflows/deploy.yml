@@ -38,5 +38,7 @@ jobs:
             --exclude='/static/img/**' \
             --exclude='contact_submissions.json' \
             --exclude='reinstall-apache2.sh' \
+            --exclude='dev-router.php' \
+            --exclude='dev-server.bat' \
             --exclude='CLAUDE.md' \
             ./ "${{ secrets.SG_USER }}@${{ secrets.SG_HOST }}:www/cjnowacek.com/public_html/"
