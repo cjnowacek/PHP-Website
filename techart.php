@@ -7,7 +7,6 @@ include 'includes/project-components/project_card.php';
 $techartProjectIds = [
     'smite',
     'runaway',
-    'sintern',
     // 'gravity-switch',
 
 ];

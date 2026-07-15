@@ -8,8 +8,7 @@ $featuredProjectIds = [
     'ml3ds',
     'whisper-from-the-stars',
     'smite',
-    'runaway',
-    'sintern'
+    'runaway'
 ];
 
 // Load the specific projects you want

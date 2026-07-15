@@ -102,7 +102,6 @@ PHP-Website/
 │   │   ├── gravity-switch.php
 │   │   ├── php-website.php
 │   │   ├── runaway.php
-│   │   ├── sintern.php
 │   │   ├── smite-envelope-tool.php
 │   │   ├── smite-gravity-switch.php
 │   │   ├── smite.php
@@ -115,7 +114,6 @@ PHP-Website/
 │   └── build-pipeline/index.php
 ├── pages-techart/
 │   ├── runaway/index.php
-│   ├── sintern/index.php
 │   ├── smite/
 │   │   ├── index.php
 │   │   ├── envelope-tool/index.php

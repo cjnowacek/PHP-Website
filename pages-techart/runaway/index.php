@@ -236,7 +236,6 @@ include '../../includes/header.php';
     <!-- Navigation -->
     <div style="display: flex; justify-content: space-between; margin: 60px 0 40px 0; gap: 20px;">
         <a href="../../techart.php" class="project-link" style="background: var(--form-bg); color: var(--text-color);">← Back to Technical Art</a>
-        <a href="../sintern/" class="project-link">Next Project: The Sintern →</a>
     </div>
 </div>
 
