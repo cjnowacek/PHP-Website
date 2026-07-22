@@ -14,7 +14,7 @@ include '../../includes/header.php';
 
     <h2>Runaway</h2>
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
-        <p><strong>Senior Thesis | 2024 | Unreal Engine</strong></p>
+        <p><strong>Senior Thesis | 2022-2023 | Unreal Engine</strong></p>
         <p>Final BFA project exploring narrative-driven gameplay and technical innovation. Runaway is a story-rich adventure game focusing on childhood trauma and the courage to face one’s past, developed as part of my senior thesis.</p>
         
         <p>Working as the sole developer, I was responsible for every aspect of the project, from character rigging and animation systems to asset optimization and deployment automation. The project challenged me to create efficient workflows that supported rapid iteration while maintaining high visual quality.</p>

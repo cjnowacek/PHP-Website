@@ -11,20 +11,20 @@ return [
     'image' => 'static/img/project-cards/runaway-webp-1200x900.webp',
     'gif' => 'static/img/project-cards/runaway-gif-1200x900.gif',
     'video' => 'static/img/project-cards/video/runaway_1200x900.mp4',
-    'description' => 'Final BFA school project. Story rich adventure focusing on childhood trauma and facing your past.',
+    'description' => 'Final BFA school project. Story-rich adventure focusing on childhood trauma and facing your past.',
     'highlights' => [
         'Character rigging and animation',
         'Automated build and deployment pipeline',
-        'Programed cinematic camera and character locomotion',
+        'Programmed cinematic camera and character locomotion',
         'Streamlined asset import workflow'
     ],
     'tech_tags' => ['Unreal Engine', 'Maya', 'Blender', 'Python'],
-    'link' => 'pages-techart/runaway/index.php',
+    'link' => 'pages-techart/runaway/',
     'meta' => [
-        'duration' => '48 hours',
-        'role' => 'Technical Artist',
+        'duration' => '8 months (academic year)',
+        'role' => '3D Generalist',
         'platforms' => 'PC',
-        'team_size' => '4 developers'
+        'team_size' => 'Solo project'
     ]
 ];
 ?>
