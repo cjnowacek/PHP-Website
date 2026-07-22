@@ -109,8 +109,7 @@ PHP-Website/
 │   │   └── breadcrumb.php
 │   ├── project-cards/         One returned array per project
 │   │   ├── bash-tools.php
-│   │   ├── build_pipeline.php
-│   │   ├── gravity-switch.php
+│   │   ├── ml3ds.php
 │   │   ├── php-website.php
 │   │   ├── runaway.php
 │   │   ├── smite-envelope-tool.php
@@ -121,8 +120,7 @@ PHP-Website/
 │       ├── project_card.php   renderProjectCard()
 │       └── project_loader.php ProjectLoader class
 ├── pages-devops/
-│   ├── bash-tools/index.php
-│   └── build-pipeline/index.php
+│   └── bash-tools/index.php
 ├── pages-techart/
 │   ├── runaway/index.php
 │   ├── sintern/index.php      Unlisted: reachable by URL, not linked from any page
