@@ -89,7 +89,7 @@ include '../../../includes/header.php';
 
         <h3>Development Details</h3>
         <ul>
-            <li><strong>Role:</strong> Technical Artist & Tool Developer</li>
+            <li><strong>Role:</strong> Technical Animator & Tool Developer</li>
             <li><strong>Development Type:</strong> Individual tool development</li>
             <li><strong>Context:</strong> Part of Smite character production pipeline</li>
             <li><strong>Platform:</strong> PC (3ds Max environment)</li>

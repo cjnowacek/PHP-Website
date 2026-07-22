@@ -89,7 +89,7 @@ include '../../../includes/header.php';
 
         <h3>Development Details</h3>
         <ul>
-            <li><strong>Role:</strong> Technical Artist & Rigger</li>
+            <li><strong>Role:</strong> Technical Animator & Rigger</li>
             <li><strong>Development Type:</strong> Rigging system development</li>
             <li><strong>Context:</strong> Part of Smite character rigging pipeline</li>
             <li><strong>Platforms:</strong> PC, Console</li>

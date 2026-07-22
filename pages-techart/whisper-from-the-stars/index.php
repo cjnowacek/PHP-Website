@@ -77,7 +77,7 @@ include '../../includes/header.php';
         <ul>
             <li><strong>Role:</strong> Technical Artist</li>
             <li><strong>Team Size:</strong> 8+ developers</li>
-            <li><strong>Duration:</strong> 1 month</li>
+            <li><strong>Duration:</strong> 2 months (2025)</li>
             <li><strong>Platform:</strong> PC</li>
         </ul>
     </div>

@@ -386,7 +386,6 @@ echo "▶️  Running: $selected"
     <!-- Navigation -->
     <div style="display: flex; justify-content: space-between; margin: 60px 0 40px 0; gap: 20px;">
         <a href="../../devops.php" class="project-link" style="background: var(--form-bg); color: var(--text-color);">← Back to Pipeline</a>
-        <a href="../build-pipeline/" class="project-link">Next Project: Build Pipeline →</a>
     </div>
 </div>
 

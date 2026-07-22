@@ -19,7 +19,7 @@ return [
     'link' => '/pages-techart/smite/envelope-tool/',
     'meta' => [
         'duration' => 'Part of Smite project',
-        'role' => 'Technical Artist',
+        'role' => 'Technical Animator',
         'platforms' => 'PC',
         'team_size' => 'Individual tool'
     ]

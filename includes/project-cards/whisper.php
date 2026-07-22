@@ -20,7 +20,7 @@ return [
     'tech_tags' => ['Python', 'CLI Tools', 'CI/CD', 'Maya', 'Automation'],
     'link' => 'pages-techart/whisper-from-the-stars/',
     'meta' => [
-        'duration' => '1 month',
+        'duration' => '2025',
         'role' => 'Technical Artist',
         'platforms' => 'PC',
         'team_size' => '8 developers'

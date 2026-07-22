@@ -1,29 +1,28 @@
 <?php
 
-// includes/projects/bash-tools.php
+// includes/project-cards/php-website.php
 return [
     'id' => 'php-website',
-    'title' => 'PHP Website',
+    'title' => 'This Website',
     'company' => '',
     'category' => 'devops',
-    'featured' => true,
-    'order' => 3,
-    'image' => 'static/img/project-cards/runaway-webp-1200x900.webp',
-    'gif' => 'static/img/project-cards/runaway-gif-1200x900.gif',
-    'description' => 'Final BFA school project. Story rich adventure focusing on childhood trauma and facing your past.',
+    'featured' => false,
+    'order' => 4,
+    'image' => '',
+    'gif' => '',
+    'description' => 'This portfolio site: procedural PHP with clean-URL routing, a data-driven project card system, and CI/CD that auto-deploys every push to production over SSH.',
     'highlights' => [
-        'Character rigging and animation',
-        'Automated build and deployment pipeline',
-        'Programed cinematic camera and character locomotion',
-        'Streamlined asset import workflow'
+        'GitHub Actions deploy pipeline to SiteGround',
+        'Data-driven project cards: each project is a PHP array, not markup',
+        'Resume PDFs built and pushed automatically from a LaTeX repo CI'
     ],
-    'tech_tags' => ['Unreal Engine', 'Maya', 'Blender', 'Python'],
-    'link' => 'pages-techart/runaway/index.php',
+    'tech_tags' => ['PHP', 'Apache', 'GitHub Actions', 'rsync'],
+    'link' => 'https://github.com/cjnowacek/php-website',
     'meta' => [
-        'duration' => '48 hours',
-        'role' => 'Technical Artist',
-        'platforms' => 'PC',
-        'team_size' => '4 developers'
+        'duration' => 'Ongoing',
+        'role' => 'Developer',
+        'platforms' => 'Web',
+        'team_size' => 'Personal project'
     ]
 ];
 ?>

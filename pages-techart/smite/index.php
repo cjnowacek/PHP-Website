@@ -49,8 +49,8 @@ foreach ($techartProjectIds as $projectId) {
 
     <h2>Smite</h2>
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
-        <p><strong>Hi-Rez Studios | 2023-2024 | Unreal Engine 5 & 3ds Max</strong></p>
-        <p>Technical Artist for Hi-Rez Studios’ popular MOBA game, focusing on character skinning/rigging and tool development. Working on a live-service game with millions of players required robust, scalable solutions that could handle frequent content updates while maintaining high-quality standards.</p>
+        <p><strong>Hi-Rez Studios | 2022-2025 | Unreal Engine 5 & 3ds Max</strong></p>
+        <p>Technical Animator for Hi-Rez Studios’ popular MOBA game, focusing on character skinning/rigging and tool development. Working on a live-service game with millions of players required robust, scalable solutions that could handle frequent content updates while maintaining high-quality standards.</p>
         
         <p>My primary focus was streamlining the character production workflow, particularly the transition from the original Smite to its sequel. This involved creating automated tools for rig building, optimizing character porting processes, and ensuring consistency across a large library of character assets.</p>
     </div>
@@ -66,8 +66,8 @@ foreach ($techartProjectIds as $projectId) {
 
         <div class="grid-item">
             <div class="project-info">
-                <h3>Character Port Optimization</h3>
-                <p class="project-description">Reduced character port time from Smite to its sequel by 25% through automated conversion scripts and standardized workflows.</p>
+                <h3>Batch Processing Automation</h3>
+                <p class="project-description">Cut manual asset-processing time by 25% with automated Python and MaxScript batch tools and standardized workflows.</p>
             </div>
         </div>
 
@@ -101,7 +101,7 @@ foreach ($techartProjectIds as $projectId) {
 
     <div class="text-content">
         <ul>
-            <li><strong>25% Faster Character Ports:</strong> Automated conversion reduced manual work from days to hours</li>
+            <li><strong>25% Faster Asset Processing:</strong> Python and MaxScript batch tools cut manual processing time</li>
             <li><strong>Consistent Quality:</strong> Standardized pipeline ensured uniform quality across multiple character assets</li>
             <li><strong>Team Productivity:</strong> Freed up artist time for creative work instead of technical setup</li>
             <li><strong>Live Service Support:</strong> Enabled rapid deployment of character updates and new content</li>
@@ -121,9 +121,9 @@ foreach ($techartProjectIds as $projectId) {
 
         <h3>Team & Duration</h3>
         <ul>
-            <li><strong>Role:</strong> Technical Artist</li>
+            <li><strong>Role:</strong> Technical Animator</li>
             <li><strong>Team Size:</strong> 200+ developers</li>
-            <li><strong>Duration:</strong> 28 months</li>
+            <li><strong>Duration:</strong> 2022-2025 (intern to associate to contract)</li>
             <li><strong>Platforms:</strong> PC, Console</li>
         </ul>
     </div>

@@ -19,7 +19,7 @@ return [
     'link' => '/pages-techart/smite/gravity-switch/',
     'meta' => [
         'duration' => 'Part of Smite project',
-        'role' => 'Technical Artist',
+        'role' => 'Technical Animator',
         'platforms' => 'PC, Console',
         'team_size' => 'Individual tool'
     ]
