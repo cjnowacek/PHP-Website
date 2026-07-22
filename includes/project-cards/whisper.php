@@ -2,7 +2,7 @@
 // includes/projects/whisper.php
 return [
     'id' => 'whisper-from-the-stars',
-    'title' => 'Whisper from the Stars',
+    'title' => 'Whispers from the Star',
     'company' => 'Anuttacon',
     'category' => 'techart',
     'featured' => true,
