@@ -25,12 +25,20 @@ There is no build, lint, or test step. PHP files are served directly.
 # Quick syntax check on a changed file
 php -l index.php
 
-# Deploy to production (SiteGround via rsync over SSH)
-rsync -avzP --delete --exclude='.git/' --exclude='reinstall-apache2.sh' ./ siteground:www/cjnowacek.com/public_html/
+# Manually re-run the deploy workflow if needed
+gh workflow run deploy.yml
 
-# If images fail to sync, exclude Krita sources
+# Push new/changed images to the server (images are not deployed by CI)
 rsync -avzP --exclude='*.kra' --exclude='*~' static/img/ siteground:www/cjnowacek.com/public_html/static/img/
 ```
+
+## Deploy
+
+Pushing to `main` auto-deploys to SiteGround: `.github/workflows/deploy.yml` rsyncs the repo over SSH (secrets `SG_HOST`/`SG_USER`/`SG_SSH_KEY`). Do not deploy manually with rsync; just push.
+
+The CI deploy is code-only. It excludes `static/img/` contents (images live on the server, uploaded via the rsync command above), except the git-tracked exceptions that mirror `.gitignore`: `static/img/project-cards/video/` and `static/img/project-cards/ml3ds-webp-1200x900.webp`. It also excludes dev-only files (`dev-server.bat`, `dev-router.php`, `reinstall-apache2.sh`, `CLAUDE.md`) and `contact_submissions.json`.
+
+If a deployed change looks stale in the browser, SiteGround's Dynamic Cache may be serving old PHP: flush via Site Tools > Speed > Caching.
 
 Images live in Dropbox, not git; `static/img/` is gitignored. The sync source is `C:\Dropbox\1-career\web-assets\~sync\` (subfolders `pages/`, `pfp/`, `project-cards/` map 1:1 into `static/img/`). The sync script lives in that Dropbox folder, not this repo, and is cross-platform (Git Bash, WSL, native Linux):
 
@@ -77,12 +85,15 @@ Projects are data, not markup:
 ```
 PHP-Website/
 ├── .gitignore
+├── .github/workflows/deploy.yml  Auto-deploy to SiteGround on push to main
 ├── .htaccess                  Clean-URL rewrites (strip .php, serve directory index.php)
 ├── 404.php
 ├── CLAUDE.md
 ├── README.md
 ├── about.php
 ├── contact.php
+├── dev-server.bat             Local preview server (php -S with dev-router.php)
+├── dev-router.php             Emulates .htaccess clean URLs for php -S
 ├── devops.php                 DevOps portfolio page (id list: $devopsProjectIds)
 ├── index.php                  Homepage (id list: $featuredProjectIds)
 ├── list_projects.php          Dev helper: lists all project ids
@@ -114,6 +125,7 @@ PHP-Website/
 │   └── build-pipeline/index.php
 ├── pages-techart/
 │   ├── runaway/index.php
+│   ├── sintern/index.php      Unlisted: reachable by URL, not linked from any page
 │   ├── smite/
 │   │   ├── index.php
 │   │   ├── envelope-tool/index.php
