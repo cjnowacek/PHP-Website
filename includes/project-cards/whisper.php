@@ -1,7 +1,7 @@
 <?php
 // includes/projects/whisper.php
 return [
-    'id' => 'whisper-from-the-stars',
+    'id' => 'whispers-from-the-star',
     'title' => 'Whispers from the Star',
     'company' => 'Anuttacon',
     'category' => 'techart',
@@ -18,7 +18,7 @@ return [
         'Built command-line tools for batch processing'
     ],
     'tech_tags' => ['Python', 'CLI Tools', 'CI/CD', 'Maya', 'Automation'],
-    'link' => 'pages-techart/whisper-from-the-stars/',
+    'link' => 'pages-techart/whispers-from-the-star/',
     'meta' => [
         'duration' => '2025',
         'role' => 'Technical Artist',

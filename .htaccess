@@ -12,6 +12,9 @@ ErrorDocument 404 /404.php
 RewriteEngine On
 RewriteBase /
 
+# Old Whisper URL (renamed Jul 2026 to match the game's actual title)
+RewriteRule ^pages-techart/whisper-from-the-stars(/.*)?$ /pages-techart/whispers-from-the-star$1 [R=301,L]
+
 # --- Option 1: clean /pages-techart/runaway/ URLs ---
 
 # 1) Redirect .../index.php → .../ (only when the client actually requested

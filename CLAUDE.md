@@ -128,7 +128,7 @@ PHP-Website/
 │   │   ├── index.php
 │   │   ├── envelope-tool/index.php
 │   │   └── gravity-switch/index.php
-│   └── whisper-from-the-stars/index.php
+│   └── whispers-from-the-star/index.php
 └── static/
     ├── css/                   Modular stylesheets (variables, base, grid, header, ...)
     ├── files/                 Resume PDFs (from Resume-with-Tex CI artifact)

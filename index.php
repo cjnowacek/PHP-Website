@@ -6,7 +6,7 @@ include 'includes/project-components/project_card.php';
 // Control which projects appear and in what order
 $featuredProjectIds = [
     'ml3ds',
-    'whisper-from-the-stars',
+    'whispers-from-the-star',
     'smite',
     'runaway'
 ];
