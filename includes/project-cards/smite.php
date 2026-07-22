@@ -8,7 +8,7 @@ return [
     'featured' => true,
     'order' => 1,
     'image' => 'static/img/project-cards/smite-webp-1200x900.webp',
-    'gif' => 'static/img/project-cards/smite-gif-1200x900.gif',
+    'gif' => '',
     'video' => 'static/img/project-cards/video/smite_1200x900.mp4',
     'description' => 'Technical animator on the popular MOBA. Focused on creating and optimizing character rigging pipelines, and developing tools to streamline the art production workflow.',
     'highlights' => [

@@ -69,7 +69,7 @@ Projects are data, not markup:
 
 ### Contact form
 
-`contact.php` posts to `includes/contact_handler.php`, which validates and appends to `contact_submissions.json` (gitignored). The Contact nav item is currently commented out in `config.php`.
+`contact.php` posts to `includes/contact_handler.php`, which validates and appends to `contact_submissions.json` (gitignored).
 
 ## TODO
 

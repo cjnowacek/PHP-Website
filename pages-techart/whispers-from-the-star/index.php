@@ -44,11 +44,6 @@ include '../../includes/header.php';
 
     </div>
 
-    <h2>Technical Implementation</h2>
-        <p>Coming soon!</p>
-
-        <hr>
-
     <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
     <h2>Project Results</h2>
     <p>Delivered a suite of headless automation tools that let a small team scale content production without sacrificing quality. Every tool ran from the command line, slotting directly into the studio's CI/CD pipeline.</p>

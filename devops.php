@@ -6,7 +6,7 @@ include 'includes/project-components/project_card.php';
 
 $devopsProjectIds = [
   'ml3ds',
-#  'bash-tools',
+  'bash-tools',
 #  'php-website'
 ];
 
