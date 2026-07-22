@@ -40,15 +40,15 @@ The CI deploy is code-only. It excludes `static/img/` contents (images live on t
 
 If a deployed change looks stale in the browser, SiteGround's Dynamic Cache may be serving old PHP: flush via Site Tools > Speed > Caching.
 
-Images live in Dropbox, not git; `static/img/` is gitignored. The sync source is `C:\Dropbox\1-career\web-assets\~sync\` (subfolders `pages/`, `pfp/`, `project-cards/` map 1:1 into `static/img/`). The sync script lives in that Dropbox folder, not this repo, and is cross-platform (Git Bash, WSL, native Linux):
+Images live in Dropbox, not git; `static/img/` is gitignored (except the git-tracked exceptions listed in Deploy below). The sync source is `C:\Dropbox\1-career\Web Assets\~sync\` (subfolders `pages/`, `pfp/`, `project-cards/` map 1:1 into `static/img/`). The sync script wipes `static/img/` and re-copies from Dropbox, so Dropbox is the source of truth: any image added to the repo must also be added to `~sync\`. The script lives in that Dropbox folder, not this repo, and is cross-platform (Git Bash, WSL, native Linux):
 
 ```bash
-# Auto-detects the repo (C:\dev\PHP-Website on Windows, ~/dev/PHP-Website on Linux);
+# Auto-detects the repo (C:\dev\php-website on Windows, ~/dev/php-website on Linux);
 # pass the repo path to override
-/c/Dropbox/1-career/web-assets/sync-with-static-img.sh [path-to-repo]
+"/c/Dropbox/1-career/Web Assets/sync-with-static-img.sh" [path-to-repo]
 ```
 
-Source art (PSDs, logo, gif frames) is in `C:\Dropbox\1-career\web-assets\src\`; only `~sync\` contents ship to the site.
+Source art (PSDs, logo, gif frames) is in `C:\Dropbox\1-career\Web Assets\src\`; only `~sync\` contents ship to the site.
 
 ## Architecture
 
