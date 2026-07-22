@@ -17,7 +17,7 @@ return [
         'Leading migration to a modern render-management platform'
     ],
     'tech_tags' => ['Python', 'PyQt', 'MaxScript', '3ds Max', 'V-Ray'],
-    'link' => 'pages-devops/ml3ds/index.php',
+    'link' => 'pages-devops/ml3ds/',
     'meta' => [
         'duration' => '2026-Present',
         'role' => 'CGI Pipeline Developer',
