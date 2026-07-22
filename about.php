@@ -8,24 +8,25 @@ include 'includes/header.php';
     <div class="about-content">
 
         <div class="about-text">
-            <h2>Professional Statement</h2>
+            <h2>About Me</h2>
             <div class="about-text" style="max-width: 800px; margin: 0 auto 40px auto; text-align: left;">
-                <p>I am a passionate Technical Artist and DevOps Developer specializing in the intersection of creativity and technology. With extensive experience in pipeline automation and infrastructure optimization, I bridge the gap between artistic vision and technical implementation.</p>
-                
-                <p>My expertise spans from building software tools that make others’ work easier to developing robust CI/CD systems and automating complex workflows. I thrive on solving challenging technical problems while empowering creative teams to focus on what they do best: creating amazing experiences.</p>
-                
-                <p>Whether developing character rig, or automating asset processing workflows, I bring a unique perspective that combines artistic sensibility with engineering precision.</p>
+                <p>I am a pipeline developer for CG studios. I build the tools artists use every day: scene diagnostics and prep in Python and PyQt, batch rendering and automation in MaxScript, and the deployment systems that keep a studio's tooling consistent across every machine in the building.</p>
+
+                <p>I got here through character rigging. After my BFA at the Cleveland Institute of Art, I spent two years as a technical animator at Hi-Rez Studios, where I shipped SMITE 2. Rigging teaches you a specific kind of discipline: your product is something other artists have to trust under deadline. Everything I build carries that habit, tools made for the person at the next desk, not for the demo.</p>
+
+                <p>Today I do pipeline development at MediaLab 3D Solutions, an architectural visualization studio, where the same principles apply at production scale: automate the repetitive work, make the right way the easy way, and let artists spend their time on the image instead of the process.</p>
             </div>
-            
+
             <h3>Skills & Expertise</h3>
             <ul>
-                <li>Pipeline Development & Tool Creation</li>
-                <li>Game Engine Integration</li>
-                <li>Cross-disciplinary Collaboration</li>
+                <li>Production tools in Python, PyQt, and MaxScript</li>
+                <li>Render farm automation and software deployment</li>
+                <li>Character rigging and technical animation</li>
+                <li>Cross-DCC workflows: 3ds Max, Maya, Unreal</li>
             </ul>
 
             <h3>Experience</h3>
-            <p>With experience working on major titles like Smite 2 and various independent projects, I specialize in creating robust technical solutions that empower artists and streamline production workflows.</p>
+            <p>Currently CGI Pipeline Developer at MediaLab 3D Solutions. Previously technical animator on SMITE 2 at Hi-Rez Studios, with ongoing freelance character rigging for independent games. The portfolio pages here cover both tracks: pipeline and DevOps work, and the technical art it grew out of.</p>
         </div>
     </div>
 </div>
